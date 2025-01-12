@@ -1,0 +1,95 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*.footer{
+  display: flex;
+  position: relative;
+  bottom: 0;
+
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  padding: 1%;
+  background-image: linear-gradient(to top, #000, #0008),
+                    url("../../Assets/concrete-wall.jpg");
+  color: white;
+}*/
+
+.footer {
+    display: block;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 5px 10px;
+    background-image: -o-linear-gradient(bottom, #000, #0008),
+        url("/images/footer/concrete-wall.jpg");
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#000), to(#0008)),
+        url("/images/footer/concrete-wall.jpg");
+    background-image: linear-gradient(to top, #000, #0008),
+        url("/images/footer/concrete-wall.jpg");
+    color: white;
+    clear: both;
+}
+
+.footer-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    -webkit-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+
+.footer-react-icons {
+    color: white;
+    width: 35px;
+    vertical-align: middle;
+}
+
+.footer-contact {
+    font-size: 11px;
+}
+
+.footer-contact p {
+    padding-bottom: 15px;
+}
+
+.footer-social-image {
+    height: 25px;
+    padding: 0px 5px;
+    ;
+}
+
+.footer p {
+    margin: 5px 0px;
+}
+
+
+
+
+@media only screen and (min-width: 900px) {
+    .footer-contact {
+        text-align: center;
+        font-size: 16px;
+    }
+}
