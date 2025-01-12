@@ -16,7 +16,6 @@ const Footer = () => {
             <div className="footer-social">
                 <a href="https://www.facebook.com/redlightdistortion/" target="_blank" rel="noreferrer">
                     <SiFacebook className='footer-react-icons' size='25px' />
-
                 </a>
 
                 <a href="https://www.instagram.com/redlightdistortion/" target="_blank" rel="noreferrer">
