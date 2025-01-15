@@ -45,12 +45,12 @@ const HeaderMobile = () => {
             </div>
 
             <nav className={headerStyle.navMobile}>
-                <Link className="link-header" onClick={toggleMobileNavigation} href="/Tour">Tour</Link>
-                <Link className="link-header" onClick={toggleMobileNavigation} href="/News">News</Link>
-                <Link className="link-header" onClick={toggleMobileNavigation} href="/Photos">Photos</Link>
-                <Link className="link-header" onClick={toggleMobileNavigation} href="/Videos">Videos</Link>
-                <Link className="link-header" onClick={toggleMobileNavigation} href="/Universe">Universe</Link>
-                <Link className="link-header" onClick={toggleMobileNavigation} href="/About">About</Link>
+                <Link className="link-header" onClick={toggleMobileNavigation} href="/tour">Tour</Link>
+                <Link className="link-header" onClick={toggleMobileNavigation} href="/news">News</Link>
+                <Link className="link-header" onClick={toggleMobileNavigation} href="/photos">Photos</Link>
+                <Link className="link-header" onClick={toggleMobileNavigation} href="/videos">Videos</Link>
+                <Link className="link-header" onClick={toggleMobileNavigation} href="/universe">Universe</Link>
+                <Link className="link-header" onClick={toggleMobileNavigation} href="/about">About</Link>
             </nav>
         </div>
     )

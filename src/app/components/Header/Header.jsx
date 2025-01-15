@@ -11,9 +11,9 @@ const Header = () => {
             <div className="header-nav">
                 <nav className="header-left">
                     <ul className="ul-header">
-                        <li><Link className="link-header" href="/Tour">Tour</Link></li>
-                        <li><Link className="link-header" href="/News">News</Link></li>
-                        <li><Link className="link-header" href="/Photos">Photos</Link></li>
+                        <li><Link className="link-header" href="/tour">Tour</Link></li>
+                        <li><Link className="link-header" href="/news">News</Link></li>
+                        <li><Link className="link-header" href="/photos">Photos</Link></li>
                     </ul>
                 </nav>
 
@@ -31,9 +31,9 @@ const Header = () => {
 
                 <nav className="header-right">
                     <ul className="ul-header">
-                        <li><Link className="link-header" href="/Videos">Videos</Link></li>
-                        <li><Link className="link-header" href="/Universe">Universe</Link></li>
-                        <li><Link className="link-header" href="/About">About</Link></li>
+                        <li><Link className="link-header" href="/videos">Videos</Link></li>
+                        <li><Link className="link-header" href="/universe">Universe</Link></li>
+                        <li><Link className="link-header" href="/about">About</Link></li>
                     </ul>
                 </nav>
             </div>
