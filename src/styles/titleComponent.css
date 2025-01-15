@@ -1,0 +1,35 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.title-container {
+  display: inline-block;
+  padding: 3px 15px;
+  margin: 2px;
+  /*background-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0.5));*/
+
+  padding-top: 8px;
+}
+
+.title {
+  display: block;
+  text-align: center;
+}
+
+.title-text {
+  display: inline;
+  font-size: 37px;
+  text-transform: uppercase;
+  color: white;
+  font-family: 'BadSignal';
+}
