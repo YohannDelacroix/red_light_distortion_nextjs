@@ -2,9 +2,9 @@ import "../../styles/titleComponent.css"
 
 function TitleComponent({titleContent}){
   return (<div className="title"><div className="title-container">
-    <div className="title-text">
+    <h1 className="title-text">
       {titleContent}
-    </div>
+    </h1>
   </div></div>)
 }
 
