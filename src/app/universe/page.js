@@ -1,6 +1,6 @@
 import "@/styles/universe.css";
 import TitleComponent from "../components/TitleComponent";
-//import Lyrics from "./Lyrics";
+import Lyrics from "./components/Lyrics";
 
 function Universe() {
     return (
@@ -18,7 +18,7 @@ function Universe() {
 
                 <TitleComponent titleContent="Songs and lyrics" />
 
-
+                <Lyrics />
             </div>
         </div>
     )

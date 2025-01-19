@@ -1,0 +1,198 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.lyrics-container {
+    padding: 20px 0;
+}
+
+.universe-songs-list {
+    list-style: none;
+    padding: 0 0;
+    margin: 20px 0;
+}
+
+.universe-songs-list-item {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.universe-songs-list-item-button {
+    width: 100%;
+    font-family: 'BadSignal';
+    font-size: 19px;
+}
+
+.universe-song {
+    overflow: hidden;
+    -webkit-transition: max-height 3000ms, min-height 3000ms;
+    -o-transition: max-height 3000ms, min-height 3000ms;
+    transition: max-height 3000ms, min-height 3000ms;
+}
+
+.universe-song-top-section {
+    position: relative;
+    height: 40px;
+    margin: 0 0 20px 0;
+}
+
+.universe-song-top-section-title {
+    margin: 0 0;
+    position: absolute;
+    font-family: 'BadSignal';
+    font-size: 20px;
+    bottom: 50%;
+    left: 10%;
+    -webkit-transform: translate(0%, 50%);
+    -ms-transform: translate(0%, 50%);
+    transform: translate(0%, 50%);
+    max-width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.universe-song-top-section-line {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background-color: white;
+}
+
+.universe-song-description {
+    text-align: center;
+    text-justify: auto;
+    padding: 0 10%;
+    overflow-x: hidden;
+    font-weight: 70;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.universe-song-lyrics {
+    text-align: center;
+}
+
+.universe-song-lyrics-sentence {
+    height: 20px;
+    max-height: 20px;
+    overflow: hidden;
+}
+
+.universe-song-button-close {
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    right: 10%;
+    -webkit-transform: translate(0%, 50%);
+    -ms-transform: translate(0%, 50%);
+    transform: translate(0%, 50%);
+}
+
+@media only screen and (min-width: 870px) {
+    .lyrics-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-transition: -webkit-box-pack 1s;
+        transition: -webkit-box-pack 1s;
+        -o-transition: justify-content 1s;
+        transition: justify-content 1s;
+        transition: justify-content 1s, -webkit-box-pack 1s, -ms-flex-pack 1s;
+    }
+
+    .universe-songs-list {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+        -webkit-box-flex: 0.2;
+        -ms-flex-positive: 0.2;
+        flex-grow: 0.2;
+    }
+
+    .universe-song {
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+        -webkit-box-flex: 0;
+        -ms-flex: 0;
+        flex: 0;
+    }
+
+    .us-newitem {
+        -webkit-box-flex: 0.0001;
+        -ms-flex: 0.0001;
+        flex: 0.0001;
+        -webkit-animation: flexGrow 500ms ease forwards;
+        animation: flexGrow 500ms ease forwards;
+    }
+
+    .us-deleteitem {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-animation: flexShrink 500ms ease forwards;
+        animation: flexShrink 500ms ease forwards;
+    }
+
+    @-webkit-keyframes flexGrow {
+        to {
+            -webkit-box-flex: 1;
+            flex: 1;
+        }
+    }
+
+    @keyframes flexGrow {
+        to {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+    }
+
+    @-webkit-keyframes flexShrink {
+        to {
+            -webkit-box-flex: 0.01;
+            flex: 0.01;
+            -webkit-box-flex: 0.0001;
+            flex: 0.0001;
+        }
+    }
+
+    @keyframes flexShrink {
+        to {
+            -webkit-box-flex: 0.01;
+            -ms-flex: 0.01;
+            flex: 0.01;
+            -webkit-box-flex: 0.0001;
+            -ms-flex: 0.0001;
+            flex: 0.0001;
+        }
+    }
+
+    .universe-song-button-close {
+        opacity: 1;
+        -webkit-transition: opacity 250ms;
+        -o-transition: opacity 250ms;
+        transition: opacity 250ms;
+    }
+
+    .disappear-animation {
+        opacity: 0;
+    }
+
+    .universe-song-content {
+        margin: auto;
+        min-width: 550px;
+        max-width: 550px;
+    }
+}
