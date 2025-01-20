@@ -1,0 +1,48 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.newscontent-container {
+    display: block;
+    position: relative;
+    color: white;
+    margin-bottom: 130px;
+    padding: 15px 5px;
+}
+
+.newscontent-main-container {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(180, 0, 0, 0)));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 1), rgba(180, 0, 0, 0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(180, 0, 0, 0));
+
+}
+
+.newscontent-main-img {
+    display: inline;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: 5px;
+}
+
+@media only screen and (min-width: 990px) {
+    .newscontent-container {
+        margin-bottom: 60px;
+    }
+
+    .newscontent-main-container {
+        padding: 80px 200px 0px 200px;
+    }
+
+    .newscontent-title {
+        margin-top: 0;
+    }
+
+    .newscontent-main-img {
+        width: 30%;
+        float: right;
+        margin-bottom: 15px;
+    }
+}
