@@ -25,10 +25,6 @@ export default async function Tour(){
             : error.message;
     }
 
-    console.log("Tour dates : ", tourDates);
-    console.log("Error",  errorMessage)
-    if(errorMessage) return <ServerError />
-
     return (
         <div className="tour-container">
             <TitleComponent titleContent="Tour Dates" />
@@ -36,13 +32,13 @@ export default async function Tour(){
             <ul className="tour-list">
                 <div>
                     {
-                        tourDates && (
+                        tourDates !== null ? (
                             tourDates.length === 0 ? <div className="tour-nodate">No upcoming tour dates</div> : (
                                 tourDates.map((date, index) => (
                                     <li key={`${date.day}-${date.month}-${date.year}`}><Date date_content={tourDates[index]} /></li>
                                 ))
                             )
-                        )
+                        ) : <ServerError />
                     }
                 </div>
             </ul>
