@@ -154,12 +154,15 @@ header {
 
 /* RESPONSIVE RULES */
 @media only screen and (max-width: 990px) {
+
     .header-left,
     .header-right {
         display: none;
     }
 
-    .header-nav {  
+    .header-nav {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
     }
 
