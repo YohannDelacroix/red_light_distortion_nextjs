@@ -20,7 +20,16 @@ const Lyrics = () => {
         //Get list of lyrics from the server
         const getLyrics = async () => {
             try {
-                setLyrics(dataLyrics)
+                const isStaticVersion = process.env.NEXT_PUBLIC_STATIC_VERSION === "true";
+                if (isStaticVersion) {
+                    // Static version
+                    setLyrics(dataLyrics)
+                } else {
+                    // Dynamic version
+                    const response = await axios.get('/lyrics')
+                    setLyrics(response.data)
+                }
+                
                 setError(null)
             }
             catch (err) {

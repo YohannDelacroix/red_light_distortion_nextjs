@@ -31,7 +31,30 @@ export const metadata = {
 };
 
 export default async function Tour() {
-    let tourDates = [...dataDate];
+    const isStaticVersion = process.env.NEXT_PUBLIC_STATIC_VERSION === "true";
+    let tourDates = null;
+
+    if (isStaticVersion) {
+        // Static version
+        tourDates = [...dataDate];
+    } else {
+        // Dynamic version
+        let errorMessage = null;
+
+        try {
+            const res = await axios.get('/tour', {
+                headers: { 'Cache-Control': 'no-store' }
+            });
+
+            tourDates = res.data;
+        } catch (error) {
+            errorMessage = error.response
+                ? `Error ${error.response.status}: ${error.response.statusText}`
+                : error.message;
+        }
+
+    }
+
 
     return (
         <div className="tour-container">
