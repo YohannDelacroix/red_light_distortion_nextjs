@@ -16,22 +16,7 @@ import Image from "next/image"
 import axios from "../api/axios.js";
 
 export default async function Home() {
-    let tourDates = null;
-    let errorMessage = null;
-
-    try {
-        const res = await axios.get('/tour', {
-            headers: { 'Cache-Control': 'no-store' }
-        });
-
-        tourDates = res.data;
-    } catch (error) {
-        errorMessage = error.response
-            ? `Error ${error.response.status}: ${error.response.statusText}`
-            : error.message;
-    }
-
-    //if(errorMessage) tourDates = []
+    let tourDates = [...dataDate];
 
     return (
         <div className="home">
@@ -48,7 +33,7 @@ export default async function Home() {
 
             <NewsletterForm />
 
-            {dataDate.length !== 0 && <div className="home-tour">
+            {tourDates.length !== 0 && <div className="home-tour">
                 <TitleComponent titleContent="Tour Dates" />
                 <ul className="tour-list">
                     {

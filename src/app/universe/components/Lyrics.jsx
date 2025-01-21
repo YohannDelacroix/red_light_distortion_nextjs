@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import ServerError from "@/app/components/ServerError"
 import Loading from "@/app/components/Loading"
 import "@/styles/lyrics.css"
+import { dataLyrics } from "@/api/dataLyrics"
 
 const Lyrics = () => {
     const emptySong = { title: "", description: [], lyrics_en: [] };
@@ -19,8 +20,7 @@ const Lyrics = () => {
         //Get list of lyrics from the server
         const getLyrics = async () => {
             try {
-                const response = await axios.get('/lyrics')
-                setLyrics(response.data)
+                setLyrics(dataLyrics)
                 setError(null)
             }
             catch (err) {

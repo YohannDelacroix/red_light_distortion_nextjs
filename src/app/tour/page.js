@@ -3,6 +3,7 @@ import TitleComponent from "@/app/components/TitleComponent";
 import ServerError from "@/app/components/ServerError";
 import Date from "./components/Date";
 import axios from "../../api/axios.js";
+import { dataDate } from "@/api/dataDate";
 
 export const metadata = {
     title: "Red Light Distortion - Tour Dates",
@@ -30,20 +31,7 @@ export const metadata = {
 };
 
 export default async function Tour() {
-    let tourDates = null;
-    let errorMessage = null;
-
-    try {
-        const res = await axios.get('/tour', {
-            headers: { 'Cache-Control': 'no-store' }
-        });
-
-        tourDates = res.data;
-    } catch (error) {
-        errorMessage = error.response
-            ? `Error ${error.response.status}: ${error.response.statusText}`
-            : error.message;
-    }
+    let tourDates = [...dataDate];
 
     return (
         <div className="tour-container">
