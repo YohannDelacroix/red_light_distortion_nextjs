@@ -3,6 +3,32 @@ import "@/styles/about.css";
 import TitleComponent from "../components/TitleComponent";
 import Image from "next/image";
 
+export const metadata = {
+    title: "About - Red Light Distortion",
+    description: "Learn more about Red Light Distortion, the French electronic metal band. Discover the band's story, members, and journey through music.",
+    keywords: "Red Light Distortion, about the band, electronic metal, band biography, French band, music history, band members, Red Light Distortion story",
+    openGraph: {
+        title: "About - Red Light Distortion",
+        description: "Discover the story behind Red Light Distortion, the electronic metal band from France. Meet the members and explore their journey in music.",
+        url: "https://www.redlightdistortion.com/about", 
+        images: [
+            {
+                url: "/images/galery/306269907_794345211858007_7240273007052242851_n.jpg", 
+                width: 1200,
+                height: 630,
+                alt: "Red Light Distortion Band",
+            },
+        ],
+        type: "website", 
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About - Red Light Distortion",
+        description: "Explore the story and journey of Red Light Distortion, the French electronic metal band. Meet the members and discover their musical path.",
+        images: ["/images/galery/306269907_794345211858007_7240273007052242851_n.jpg"],
+    },
+};
+
 function About() {
     return (
         <div className="about-container">
