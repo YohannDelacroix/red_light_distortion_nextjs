@@ -3,11 +3,6 @@ import TitleComponent from "../components/TitleComponent";
 import images from "@/../data/imageList.json"
 import Image from "next/image";
 
-export const metadata = {
-    title:"Red Light Distortion - Photos",
-    metadescription:"Photos : Photos du groupe Red Light Distortion"
-}
-
 function Photos() {
     return (
         <div className="photo-container">

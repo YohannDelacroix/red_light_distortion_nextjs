@@ -3,7 +3,6 @@ import "@/styles/about.css";
 import TitleComponent from "../components/TitleComponent";
 import Image from "next/image";
 
-
 function About() {
     return (
         <div className="about-container">

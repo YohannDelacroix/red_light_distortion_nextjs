@@ -4,11 +4,6 @@ import ServerError from "@/app/components/ServerError";
 import Date from "./components/Date";
 import axios from "../../api/axios.js";
 
-export const metadata = {
-    title:"Red Light Distortion - Tour",
-    metadescription:"Tour : Tournée et dates de concerts de Red Light Distortion"
-}
-
 export default async function Tour(){
     let tourDates = null;
     let errorMessage = null;
