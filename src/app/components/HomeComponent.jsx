@@ -9,8 +9,8 @@ import ServerError from "./ServerError"
 import Date from "../tour/components/Date"
 import NewsComponent from "../news/components/NewsComponent"
 import NewsletterForm from "./NewsletterForm";
-import { newsTable } from "@/api/dataNews"
-import { dataDate } from "@/api/dataDate"
+import { newsTable } from "@/api/staticNews"
+import { dataDate } from "@/api/staticTourDates"
 import images from "@/../data/imageList.json"
 import { useState, useEffect } from 'react'
 import Link from "next/link";

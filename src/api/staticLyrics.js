@@ -1,4 +1,4 @@
-export const dataLyrics = [
+export const staticLyrics = [
     {
         "_id": "63d525848be1bbe33ef83925",
         "title": "Sir Failure",

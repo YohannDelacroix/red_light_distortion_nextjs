@@ -2,11 +2,12 @@
 import React from 'react'
 import { useState } from 'react'
 import "@/styles/newsletter.css";
+import TitleComponent from '../TitleComponent';
 
-const NewsletterForm = () => {
+const HomeNewsletterSection = () => {
     const [displayForm, setDisplayForm] = useState(false);
-    const resultsDefault = { name: "", city: "", email: "" };
-    const [results, setResults] = useState(resultsDefault);
+    const initialFormState = { name: "", city: "", email: "" };
+    const [results, setResults] = useState(initialFormState);
 
     //Handle display Newsletter Form
     const toggleNewsletterForm = () => {
@@ -23,7 +24,7 @@ const NewsletterForm = () => {
         })
 
         setDisplayForm(false);
-        setResults(resultsDefault);
+        setResults(initialFormState);
     };
 
     //Handle whenn name is changed
@@ -51,7 +52,8 @@ const NewsletterForm = () => {
     };
 
     return (
-        <div className="home-home-newsletterform">
+        <section className="home-home-newsletterform" aria-labelledby="newsletter-section-title">
+            <TitleComponent titleContent={"Newsletter"} level={2} titleId="newsletter-section-title" />
             <div className="home-home-newsletterform-button">
                 <button
                     className="home-home-buttonnewsletter"
@@ -83,8 +85,8 @@ const NewsletterForm = () => {
                     </div>
                 </form>
             }
-        </div>
+        </section>
     )
 }
 
-export default NewsletterForm
+export default HomeNewsletterSection

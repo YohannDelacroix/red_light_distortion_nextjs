@@ -1,112 +1,56 @@
+/**
+ * Home Page Component
+ * 
+ * This component is responsible for rendering the main content of the homepage. 
+ * It organizes the following sections:
+ * 1. Video section (embedded YouTube video)
+ * 2. Newsletter subscription form
+ * 3. Tour dates (dynamic or static data based on the current configuration)
+ * 4. News (latest articles from the blog)
+ * 5. Photos (photo gallery)
+ * 6. Logo (branding image)
+ * 
+ * 
+ * Each section is implemented as a separate component, imported here:
+ * - HomeVideoSection: Handles video embedding.
+ * - HomeNewsletterSection: Handles the newsletter form.
+ * - HomeTourSection: Displays upcoming tour dates.
+ * - HomeNewsSection: Shows the latest news articles.
+ * - HomePhotosSection: Displays a photo gallery.
+ * 
+ */
+
+import Image from "next/image"
 import "@/styles/home.css"
 import "@/styles/newsletter.css";
 import "@/styles/photos.css";
 import "@/styles/tour.css";
-import Loading from "./components/Loading";
-import TitleComponent from "./components/TitleComponent";
-import ServerError from "./components/ServerError";
-import Date from "./tour/components/Date";
-import NewsComponent from "./news/components/NewsComponent";
-import NewsletterForm from "./components/NewsletterForm";
-import { newsTable } from "@/api/dataNews"
-import { dataDate } from "@/api/dataDate"
-import images from "@/../data/imageList.json"
-import Link from "next/link";
-import Image from "next/image"
-import axios from "../api/axios.js";
+import HomeNewsletterSection from "./components/Home/HomeNewsletterSection";
+import HomeVideoSection from "./components/Home/HomeVideoSection";
+import HomeTourSection from "./components/Home/HomeTourSection";
+import HomeNewsSection from "./components/Home/HomeNewsSection";
+import HomePhotosSection from "./components/Home/HomePhotosSection";
 
-export default async function Home() {
-    const isStaticVersion = process.env.NEXT_PUBLIC_STATIC_VERSION === "true";
-    let tourDates = null;
-
-    if (isStaticVersion) {
-        // Static version
-        tourDates = [...dataDate];
-    } else {
-        // Dynamic version
-        let errorMessage = null;
-
-        try {
-            const res = await axios.get('/tour', {
-                headers: { 'Cache-Control': 'no-store' }
-            });
-
-            tourDates = res.data;
-        } catch (error) {
-            errorMessage = error.response
-                ? `Error ${error.response.status}: ${error.response.statusText}`
-                : error.message;
-        }
-
-    }
-
+export default function Home() {
     return (
-        <div className="home">
-            <div className="home-home-video">
-                <div className="container-video">
-                    <iframe className="iframe-video"
-                        src="https://www.youtube.com/embed/p0Y52_ej810"
-                        title="YouTube video player"
-                        allowFullScreen
-                        origin="http://localhost:3000"
-                    />
-                </div>
-            </div>
+        <main className="home">
+            {/* Video Section */}
+            <HomeVideoSection />
 
-            <NewsletterForm />
+            {/* Newsletter Section */}
+            <HomeNewsletterSection />
 
-            {tourDates.length !== 0 && <div className="home-tour">
-                <TitleComponent titleContent="Tour Dates" />
-                <ul className="tour-list">
-                    {
-                        tourDates !== null ? (
-                            tourDates.length === 0 ? <div className="tour-nodate">No upcoming tour dates</div> : (
-                                tourDates.slice(0, 5).map((date, index) => (
-                                    <li key={`${date.day}-${date.month}-${date.year}`}><Date date_content={tourDates[index]} /></li>
-                                ))
-                            )
-                        ) : <ServerError />
-                    }
-                </ul>
-                <Link className="home-link" href="/tour"><button className="home-button">More Tour Dates</button></Link>
-            </div>}
+            {/* Tour Dates Section */}
+            <HomeTourSection />
 
-            <div className="home-news">
-                <TitleComponent titleContent="News" />
-                <div className="news-list">
-                    {
-                        newsTable.slice(0, 4).map((news, index) => (
-                            <Link key={`${news.title}-${index}`} href={`/news/${news.id}`}><NewsComponent newsContent={news} /></Link>
-                        ))
-                    }
-                </div>
-                <Link className="home-link" href="/news"><button className="home-button">More News</button></Link>
-            </div>
+            {/* News Section */}
+            <HomeNewsSection />
 
-            <div className="home-photos">
-                <TitleComponent titleContent="Photos" />
-                <div className="photo-galery">
-                    {
-                        images.slice(0, 3).map((image, index) => (
-                            <div className="photo-galery-img-container" key={image}>
-                                <a href={image}>
-                                    <Image
-                                        src={image}
-                                        alt={`Photo ${index + 1}`}
-                                        width={320}
-                                        height={180}
-                                        layout="responsive"
-                                        className="photo-galery-img"
-                                    ></Image>
-                                </a>
-                            </div>
-                        ))
-                    }
-                </div>
-                <Link className="home-link" href="/photos"><button className="home-button">More Photos</button></Link>
-            </div>
+            {/* Photos Section */}
+            <HomePhotosSection />
 
-            <div className="home-logo">
+            {/* Branding Logo Section */}
+            <section className="home-logo">
                 <Image
                     src="/images/header/RLDLogoFondNoir.jpg"
                     alt="Red Light Distortion Logo"
@@ -114,7 +58,7 @@ export default async function Home() {
                     height={153}
                     layout="responsive"
                     className="logo-img"></Image>
-            </div>
-        </div>
+            </section>
+        </main>
     );
 }

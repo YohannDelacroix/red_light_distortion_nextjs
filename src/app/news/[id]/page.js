@@ -1,5 +1,5 @@
 import "@/styles/newsContent.css";
-import { getNews, newsTable } from "@/api/dataNews";
+import { getNews, staticNews } from "@/api/staticNews";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { JSDOM } from "jsdom";
@@ -13,7 +13,7 @@ export async function generateStaticParams() {
     //const res = await fetch("url/");
     //const articles = await res.json();
 
-    const articles = newsTable;
+    const articles = staticNews;
 
     //Return dynamics parameters for each article of the news list
     return articles.map((article) => ({

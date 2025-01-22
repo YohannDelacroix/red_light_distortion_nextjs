@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import ServerError from "@/app/components/ServerError"
 import Loading from "@/app/components/Loading"
 import "@/styles/lyrics.css"
-import { dataLyrics } from "@/api/dataLyrics"
+import { staticLyrics } from "@/api/staticLyrics"
 
 const Lyrics = () => {
     const emptySong = { title: "", description: [], lyrics_en: [] };
@@ -23,7 +23,7 @@ const Lyrics = () => {
                 const isStaticVersion = process.env.NEXT_PUBLIC_STATIC_VERSION === "true";
                 if (isStaticVersion) {
                     // Static version
-                    setLyrics(dataLyrics)
+                    setLyrics(staticLyrics)
                 } else {
                     // Dynamic version
                     const response = await axios.get('/lyrics')

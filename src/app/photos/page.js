@@ -32,11 +32,11 @@ function Photos() {
     return (
         <div className="photo-container">
             <TitleComponent titleContent="Photos" />
-            <div className="photo-galery">
+            <div className="photo-gallery">
                 {
                     images.map((image, index) => {
                         return (
-                            <div className="photo-galery-img-container" key={image}>
+                            <div className="photo-gallery-img-container" key={image}>
                                 <a href={image}>
                                     <Image
                                         src={image}
@@ -44,7 +44,7 @@ function Photos() {
                                         layout="responsive"
                                         width={16}
                                         height={9}
-                                        className="photo-galery-img"
+                                        className="photo-gallery-img"
                                     ></Image>
                                 </a>
                             </div>)

@@ -1,4 +1,4 @@
-export const newsTable = [
+export const staticNews = [
     {
         title: "Show report #1 - Le Bouillon",
         date: "December, 05, 2022",
@@ -64,7 +64,7 @@ export const newsTable = [
 ];
 
 export function getNews(id) {
-    return newsTable.find(
+    return staticNews.find(
         (news) => news.id === id
     );
 }

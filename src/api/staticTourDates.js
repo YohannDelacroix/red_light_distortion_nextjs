@@ -1,4 +1,4 @@
-export const dataDate = [
+export const staticTourDates = [
   {
     day: 1,
     month: 'JAN',

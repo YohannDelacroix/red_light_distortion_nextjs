@@ -2,7 +2,7 @@ import "@/styles/news.css"
 import TitleComponent from "../components/TitleComponent";
 import NewsComponent from "./components/NewsComponent";
 import Link from "next/link";
-import { newsTable } from "@/api/dataNews";
+import { staticNews } from "@/api/staticNews";
 
 export const metadata = {
     title: "Red Light Distortion - Latest News",
@@ -38,7 +38,7 @@ export default function NewsLayout({ children }) {
 
                 <div className="news-list">
                     {
-                        newsTable.map((news, index) => (
+                        staticNews.map((news, index) => (
                             <Link href={`/news/${news.id}`} key={`${news.title}-${index}`}><NewsComponent  newsContent={news} /></Link>
                         ))
                     }
