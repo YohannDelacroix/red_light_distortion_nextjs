@@ -1,6 +1,6 @@
-import "../../styles/footer.css"
+import "@/styles/footer.css"
 import React from 'react'
-import axios from "../../api/axios.js";
+import axios from "@/api/axios.js";
 import { SiFacebook, SiInstagram, SiYoutube } from 'react-icons/si'
 import { IconContext } from "react-icons";
 

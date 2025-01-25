@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 
 export const metadata = {
     title: "Red Light Distortion - Official Website",

@@ -1,6 +1,6 @@
 import "../../styles/tour.css";
 import TitleComponent from "@/app/components/TitleComponent/TitleComponent";
-import ServerError from "@/app/components/ServerError";
+import ServerError from "@/app/components/ServerError/ServerError";
 import Date from "./components/Date";
 import axios from "../../api/axios.js";
 import { staticTourDates } from "@/api/staticTourDates";

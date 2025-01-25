@@ -2,8 +2,8 @@
 import axios from "@/api/axios"
 import React from 'react'
 import { useState, useEffect } from 'react'
-import ServerError from "@/app/components/ServerError"
-import Loading from "@/app/components/Loading"
+import ServerError from "@/app/components/ServerError/ServerError"
+import Loading from "@/app/components/Loading/Loading"
 import "@/styles/lyrics.css"
 import { staticLyrics } from "@/api/staticLyrics"
 

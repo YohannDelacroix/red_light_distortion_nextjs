@@ -25,11 +25,11 @@ import "@/styles/home.css"
 import "@/styles/newsletter.css";
 import "@/styles/photos.css";
 import "@/styles/tour.css";
-import HomeNewsletterSection from "./components/Home/HomeNewsletterSection";
-import HomeVideoSection from "./components/Home/HomeVideoSection";
-import HomeTourSection from "./components/Home/HomeTourSection";
-import HomeNewsSection from "./components/Home/HomeNewsSection";
-import HomePhotosSection from "./components/Home/HomePhotosSection";
+import HomeNewsletterSection from "./components/Home/HomeNewsletterSection/HomeNewsletterSection";
+import HomeVideoSection from "./components/Home/HomeVideoSection/HomeVideoSection";
+import HomeTourSection from "./components/Home/HomeTourSection/HomeTourSection";
+import HomeNewsSection from "./components/Home/HomeNewsSection/HomeNewsSection";
+import HomePhotosSection from "./components/Home/HomePhotosSection/HomePhotosSection";
 
 export default function Home() {
     return (

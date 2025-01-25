@@ -22,7 +22,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import images from "@/../data/imageList.json"
-import TitleComponent from '../TitleComponent/TitleComponent'
+import TitleComponent from '../../TitleComponent/TitleComponent'
 
 const HomePhotosSection = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import TitleComponent from './TitleComponent/TitleComponent'
-import "../../styles/error.css"
+import TitleComponent from '../TitleComponent/TitleComponent'
+import "@/styles/error.css"
 
 const ServerError = () => {
   return (
