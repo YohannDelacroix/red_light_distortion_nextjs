@@ -1,5 +1,5 @@
 import "../../styles/tour.css";
-import TitleComponent from "@/app/components/TitleComponent";
+import TitleComponent from "@/app/components/TitleComponent/TitleComponent";
 import ServerError from "@/app/components/ServerError";
 import Date from "./components/Date";
 import axios from "../../api/axios.js";

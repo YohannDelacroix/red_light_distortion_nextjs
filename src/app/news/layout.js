@@ -1,5 +1,5 @@
 import "@/styles/news.css"
-import TitleComponent from "../components/TitleComponent";
+import TitleComponent from "../components/TitleComponent/TitleComponent";
 import NewsComponent from "./components/NewsComponent";
 import Link from "next/link";
 import { staticNews } from "@/api/staticNews";

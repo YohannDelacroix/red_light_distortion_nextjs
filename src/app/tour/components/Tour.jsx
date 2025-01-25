@@ -1,6 +1,6 @@
 import "../../../styles/tour.css";
 
-import TitleComponent from "@/app/components/TitleComponent";
+import TitleComponent from "@/app/components/TitleComponent/TitleComponent";
 import Loading from "@/app/components/Loading";
 import ServerError from "@/app/components/ServerError";
 import Date from "./Date";

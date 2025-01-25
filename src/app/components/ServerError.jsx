@@ -1,5 +1,5 @@
 import React from 'react'
-import TitleComponent from './TitleComponent'
+import TitleComponent from './TitleComponent/TitleComponent'
 import "../../styles/error.css"
 
 const ServerError = () => {

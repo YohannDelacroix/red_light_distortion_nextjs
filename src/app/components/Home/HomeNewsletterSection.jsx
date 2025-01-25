@@ -2,7 +2,7 @@
 import React from 'react'
 import { useState } from 'react'
 import "@/styles/newsletter.css";
-import TitleComponent from '../TitleComponent';
+import TitleComponent from '../TitleComponent/TitleComponent';
 import useNewsletterForm from '@/app/hooks/useNewsletterForm';
 import Loading from '../Loading';
 

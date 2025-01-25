@@ -1,5 +1,5 @@
 import "@/styles/photos.css";
-import TitleComponent from "../components/TitleComponent";
+import TitleComponent from "../components/TitleComponent/TitleComponent";
 import images from "@/../data/imageList.json"
 import Image from "next/image";
 

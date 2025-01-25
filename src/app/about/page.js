@@ -1,6 +1,6 @@
 
 import "@/styles/about.css";
-import TitleComponent from "../components/TitleComponent";
+import TitleComponent from "../components/TitleComponent/TitleComponent";
 import Image from "next/image";
 
 export const metadata = {

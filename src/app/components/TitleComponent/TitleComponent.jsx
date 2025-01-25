@@ -18,19 +18,20 @@
  * <TitleComponent titleContent="Section 1" />
  */
 
-import "../../styles/titleComponent.css"
+import "@/styles/titleComponent.css"
 
 function TitleComponent({ titleContent, level = 1, titleId = ""}) {
     //Generate a dynamic ID if aria labelled by is not provided
-    if(titleId === "") titleId = `title-${Math.random().toString(36).slice(2, 11)}}`;
+    if(titleId === "") titleId = `title-${Math.random().toString(36).slice(2, 11)}`;
 
     //Ensure the level is valid and reinitialize to default value
-    if(level < 0 || level > 6) level = 1;
+    if(level < 1 || level > 6) level = 1;
     const Tag = `h${level}`;  //Create a h1 to h6 tag
 
     return (<div className="title"><div className="title-container">
         <Tag 
             className="title-text"
+            data-testid="heading-tag"
             id={titleId}>
             {titleContent}
         </Tag>

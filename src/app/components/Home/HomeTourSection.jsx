@@ -27,7 +27,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Date from '@/app/tour/components/Date'
-import TitleComponent from '../TitleComponent'
+import TitleComponent from '../TitleComponent/TitleComponent'
 import ServerError from '../ServerError'
 import { staticTourDates } from '@/api/staticTourDates'
 

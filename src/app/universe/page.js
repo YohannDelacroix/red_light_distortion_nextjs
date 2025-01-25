@@ -1,5 +1,5 @@
 import "@/styles/universe.css";
-import TitleComponent from "../components/TitleComponent";
+import TitleComponent from "../components/TitleComponent/TitleComponent";
 import Lyrics from "./components/Lyrics";
 
 export const metadata = {

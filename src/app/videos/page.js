@@ -1,5 +1,5 @@
 import "@/styles/videos.css";
-import TitleComponent from "../components/TitleComponent";
+import TitleComponent from "../components/TitleComponent/TitleComponent";
 
 export const metadata = {
     title: "Red Light Distortion - Videos",
