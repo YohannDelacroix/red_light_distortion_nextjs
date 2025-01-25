@@ -65,7 +65,7 @@ function useNewsletterForm() {
         if (!results.name.trim()) {
             newErrors.name = "Name is required.";
             isValid = false;
-        } else if(!/^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/.test(results.name)){
+        } else if(!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s-'`-]+$/.test(results.name)){
             newErrors.name = "Please enter a valid name";
             isValid = false;
         }
@@ -74,7 +74,7 @@ function useNewsletterForm() {
         if (!results.city.trim()) {
             newErrors.city = "City is required.";
             isValid = false;
-        } else if(!/^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/.test(results.city)){
+        } else if(!/^[a-zA-ZÀ-ÖØ-öø-ÿ\s-'`-]+$/.test(results.city)){
             newErrors.city = "Please enter a valid city";
             isValid = false;
         }
@@ -148,13 +148,17 @@ function useNewsletterForm() {
 
     return {
         displayForm,
+        results,
         errors,
         errorServer,
         loading,
         confirmation,
         toggleNewsletterForm,
         handleInputChange,
-        handleSubmit
+        handleSubmit,
+        validateForm,
+        setErrors,
+        setResults
     };
 }
 
