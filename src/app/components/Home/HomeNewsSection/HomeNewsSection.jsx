@@ -5,11 +5,6 @@
  * Currently, the news articles are fetched from a static source (`staticNews`).
  * In the future, this component can be enhanced to dynamically fetch news from an API or database.
  * 
- * Structure:
- * - Title: A dynamic title rendered using the TitleComponent (level 2 heading).
- * - News List: A list of the latest news articles, with a limit of 4 items shown.
- * - Link: A "More News" button that redirects to the full news page.
- * 
  * Data Handling:
  * - Currently, the component uses a static array (`staticNews`) for news articles.
  * - This static data is rendered on the page until a dynamic solution (API or database integration) is implemented.
@@ -17,7 +12,6 @@
  * Dependencies:
  * - `TitleComponent`: To render the section title.
  * - `NewsComponent`: To render individual news articles.
- * - `Link`: For navigation to the full news page.
  * 
  * Note: The dynamic loading of news content is planned but currently not implemented. 
  *       The component is using static data for now, and will be updated once 
@@ -37,7 +31,7 @@ const HomeNewsSection = () => {
     return (
         <section className="home-news" aria-labelledby="news-section-title">
             {/* Title Section */}
-            <TitleComponent titleContent="News" level={2} titleId="news-section-title" />
+            <TitleComponent titleContent="Latest news" level={2} titleId="news-section-title" />
 
             {/* News List Section */}
             <div className="news-list">
@@ -51,7 +45,7 @@ const HomeNewsSection = () => {
             </div>
 
             {/* Link to Full News Page */}
-            <Link className="home-link" href="/news"><button className="home-button">More News</button></Link>
+            <Link className="home-link" href="/news"><button aria-label="Go to news section" className="home-button">More News</button></Link>
         </section>
     )
 }
