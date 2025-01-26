@@ -5,12 +5,21 @@
 * Browsers: last 4 version
 */
 
+/* 
+ * Loading Container
+ * The container ensures that the spinner is centered and has enough space for the animation.
+ */
 .loading-container {
     position: relative;
     min-height: 50px;
     margin: 10px 0;
 }
 
+/* 
+ * Loading Spinner
+ * The spinner is created using a pseudo-element (::before) and uses border-based animation.
+ * The animation rotates the spinner in a circular motion.
+ */
 .loading-spin::before {
     -webkit-animation: 1.5s linear infinite spinner;
     animation: 1.5s linear infinite spinner;
@@ -30,6 +39,11 @@
     will-change: transform;
 }
 
+
+/* 
+ * Spinner Keyframes
+ * Creates a rotating effect for the spinner.
+ */
 @-webkit-keyframes spinner {
     0% {
         -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg);
