@@ -3,7 +3,7 @@ import TitleComponent from "@/app/components/TitleComponent/TitleComponent";
 import ServerError from "@/app/components/ServerError/ServerError";
 import Date from "./components/Date";
 import axios from "../../api/axios.js";
-import { staticTourDates } from "@/api/staticTourDates";
+import { getStaticTourDates } from "@/api/staticTourDates";
 
 export const metadata = {
     title: "Red Light Distortion - Tour Dates",
@@ -36,7 +36,7 @@ export default async function Tour() {
 
     if (isStaticVersion) {
         // Static version
-        tourDates = [...staticTourDates];
+        tourDates = getStaticTourDates();
     } else {
         // Dynamic version
         let errorMessage = null;

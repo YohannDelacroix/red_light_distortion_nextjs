@@ -29,7 +29,7 @@ import Link from 'next/link'
 import Date from '@/app/tour/components/Date'
 import TitleComponent from '../../TitleComponent/TitleComponent'
 import ServerError from '../../ServerError/ServerError'
-import { staticTourDates } from '@/api/staticTourDates'
+import { getStaticTourDates } from '@/api/staticTourDates'
 
 const HomeTourSection = async () => {
     const isStaticVersion = process.env.NEXT_PUBLIC_STATIC_VERSION === "true";
@@ -38,7 +38,7 @@ const HomeTourSection = async () => {
     // Determine whether to use static or dynamic data based on environment setting
     if (isStaticVersion) {
         // Static version: Use pre-defined static data for tour dates
-        tourDates = [...staticTourDates];
+        tourDates = getStaticTourDates();
     } else {
         // Dynamic version: Fetch tour dates from an external API
         let errorMessage = null;
@@ -61,7 +61,7 @@ const HomeTourSection = async () => {
 
     // Render the section only if tourDates is available
     return (
-        tourDates && <section className="home-tour" aria-labelledby="tour-section-title">
+        tourDates && <section className="home-tour" data-testid="home-tour-section" aria-labelledby="tour-section-title">
             {/* Title Section */}
             <TitleComponent titleContent="Tour Dates" level={2} titleId="tour-section-title" />
 
@@ -69,9 +69,12 @@ const HomeTourSection = async () => {
             <ul className="tour-list">
                 {
                     tourDates !== null ? (
-                        tourDates.length === 0 ? <div className="tour-nodate">No upcoming tour dates</div> : (
+                        tourDates.length === 0 ? <div data-testid="no-tour-dates" className="tour-nodate">No upcoming tour dates</div> : (
                             tourDates.slice(0, 5).map((date, index) => (
-                                <li key={`${date.day}-${date.month}-${date.year}`}><Date date_content={tourDates[index]} /></li>
+                                <li key={`${date.day}-${date.month}-${date.year}`}
+                                    data-testid={`date${index}`}>
+                                    <Date date_content={tourDates[index]} />
+                                </li>
                             ))
                         )
                     ) : <ServerError />

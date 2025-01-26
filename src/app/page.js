@@ -33,7 +33,7 @@ import HomePhotosSection from "./components/Home/HomePhotosSection/HomePhotosSec
 
 export default function Home() {
     const videoSrc = "https://www.youtube.com/embed/p0Y52_ej810"; //Youtube Video in front of the home page
-
+    
     return (
         <main className="home">
             {/* Video Section */}
