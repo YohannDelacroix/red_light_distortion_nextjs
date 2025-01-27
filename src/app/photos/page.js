@@ -1,6 +1,25 @@
+/***************************************************************
+  * @file photos.js
+  * @description
+  * "Photo Gallery" page for the Red Light Distortion website.
+  * It renders a gallery of images from the band's official photos, displaying them dynamically based on paths provided by a JSON file. 
+  * The component includes metadata for SEO optimization and social media sharing.
+  *
+  * @dependencies
+  * - `TitleComponent`: A reusable component for displaying the page title.
+  * - `imageList.json`: A JSON file that contains paths to all images in the gallery.
+  * - `photos.css`: Custom CSS for styling the photo gallery.
+  *
+  * @usage
+  * This component is part of the Red Light Distortion website and is used to display a responsive gallery of band photos. 
+  * It dynamically loads image paths from `imageList.json`
+  *
+  * @author Yohann Delacroix
+ ***************************************************************/
+
 import "@/styles/photos.css";
 import TitleComponent from "../components/TitleComponent/TitleComponent";
-import images from "@/../data/imageList.json"
+import imagesSrc from "@/../data/imageList.json"
 import Image from "next/image";
 
 export const metadata = {
@@ -32,26 +51,26 @@ function Photos() {
     return (
         <div className="photo-container">
             <TitleComponent titleContent="Photos" />
-            <div className="photo-gallery">
+            <section className="photo-gallery">
                 {
-                    images.map((image, index) => {
+                    imagesSrc.map((image, index) => {
                         return (
-                            <div className="photo-gallery-img-container" key={image}>
+                            <figure className="photo-gallery-img-container" key={image}>
                                 <a href={image}>
                                     <Image
                                         src={image}
-                                        alt={`Photo ${index + 1}`}
+                                        alt={`Photo from the first shooting of Red Light Distortion : #${index + 1}`}
                                         layout="responsive"
                                         width={16}
                                         height={9}
                                         className="photo-gallery-img"
                                     ></Image>
                                 </a>
-                            </div>)
+                            </figure>)
                     }
                     )
                 }
-            </div>
+            </section>
         </div>
     )
 }
