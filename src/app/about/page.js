@@ -1,8 +1,20 @@
+/**
+ * @fileoverview About Page for Red Light Distortion
+ * @description This page contains the biography of the band members (Walrus and Thrash X) as well as the story of the band. 
+ * It also includes metadata for SEO optimization and social media sharing. 
+ * @version 1.0
+ * @author Yohann Delacroix
+ * @see {@link https://redlightdistortion.netlify.app/about} for the live version of the page.
+ */
 
 import "@/styles/about.css";
 import TitleComponent from "../components/TitleComponent/TitleComponent";
 import Image from "next/image";
 
+/**
+ * Metadata for the "About" page, including SEO information and social media sharing configurations.
+ * These details help optimize the page for search engines and improve visibility on social media platforms (Facebook, Twitter, etc.).
+ */
 export const metadata = {
     title: "About - Red Light Distortion",
     description: "Learn more about Red Light Distortion, the French electronic metal band. Discover the band's story, members, and journey through music.",
@@ -29,21 +41,30 @@ export const metadata = {
     },
 };
 
+/**
+ * About page component that displays the biographies of the band members and the band's story.
+ * This page includes images and text content describing the origins of Red Light Distortion.
+ */
 function About() {
     return (
-        <div className="about-container">
-            <TitleComponent titleContent="About" />
-            <div className="about-biography">
-                <div className="about-member-biography-left">
+        <main className="about-container">
+            <TitleComponent titleContent="About" level="2" />
+
+            {/* Main section containing the biography of the band members */}
+            <section className="about-biography">
+
+                {/* Biography of Roman (Walrus) */}
+                <article className="about-member-biography-left">
                     <Image
                         src="/images/about/roman.jpg"
                         alt="Walrus picture"
                         width={1600}
                         height={1295}
-                        className="about-img-yohann"></Image>
+                        className="about-img-roman"
+                        title="image of Walrus"></Image>
                     <h3>Walrus</h3>
-                    <h5 className="about-title-right">Roman Krukowski</h5>
-                    <h6>Guitarist</h6>
+                    <h4 className="about-title-right">Roman Krukowski</h4>
+                    <h5>Guitarist</h5>
                     <p>
                         Roman was 15 when the shock happenned.
                     </p>
@@ -61,21 +82,22 @@ function About() {
                         Since, the more the sands of time was running out,
                         the more his passion and devotion increased.
                     </p>
+                </article>
 
-                </div>
-
-                <div className="about-member-biography-right">
+                {/* Biography of Thrash X */}
+                <article className="about-member-biography-right">
                     <Image src="/images/about/x.jpg"
                         alt="X picture"
                         width={1000}
                         height={1500}
-                        className="about-img-roman">
+                        className="about-img-x"
+                        title="image of X">
                     </Image>
                     <h3>X</h3>
-                    <h5 className="about-title-left">Thrash X</h5>
+                    <h4 className="about-title-left">Thrash X</h4>
 
 
-                    <h6>Guitarist, Singer</h6>
+                    <h5>Guitarist, Singer</h5>
                     <p>
                         At 17, Thrash X was a mere student who spent his time playing guitar.
                     </p>
@@ -90,10 +112,10 @@ function About() {
                         And during these dark times he composes the first Red Light Distortion's sound.
                         He realises the most important thing before death takes life is to play music.
                     </p>
-                </div>
+                </article>
 
-
-                <div className="about-band-biography" >
+                {/* Biography of the band and its origin story */}
+                <article className="about-band-biography" >
                     <h3>The Red Story</h3>
                     <p>
                         At the beginning, Thrash X was a guitar teacher and gave guitar lessons to Roman.
@@ -111,9 +133,9 @@ function About() {
                         Red Light Distortion is ready to put their foot on stage.
                         The audience is about to discover the new Electronic Heavy Metal.
                     </p>
-                </div>
-            </div>
-        </div>
+                </article>
+            </section>
+        </main>
     )
 }
 
