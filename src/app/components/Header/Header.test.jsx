@@ -1,7 +1,5 @@
-const { render, screen, fireEvent } = require("@testing-library/react")
-const { default: HeaderMobile } = require("./HeaderMobile");
-const { act } = require("react");
-const { default: Header } = require("./Header");
+import { render, screen, fireEvent } from "@testing-library/react"
+import HeaderMobile from "./HeaderMobile";
 
 describe("Header Test Suites", () => {
     const links = [
