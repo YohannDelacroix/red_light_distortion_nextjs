@@ -1,7 +1,31 @@
+/**
+ * Universe Component
+ *
+ * @description This component renders the "Universe" page for the Red Light Distortion website, 
+ * providing an immersive experience into the band's world. It includes:
+ * - A presentation of the band with narrative text
+ * - A section displaying the band's song lyrics
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered Tour page with tour dates or error message.
+ * 
+ * 
+ * @dependencies
+ * - TitleComponent: for displaying the page title.
+ * - Lyrics: Component that displays song's lyrics of the band
+ *
+ * This component is styled with "universe.css" and integrates seamlessly with the 
+ * overall site design and structure.
+ * 
+ * @author Yohann Delacroix
+ * 
+ */
+
 import "@/styles/universe.css";
 import TitleComponent from "../components/TitleComponent/TitleComponent";
 import Lyrics from "./components/Lyrics";
 
+// Metadata for SEO and social media sharing
 export const metadata = {
     title: "Universe - Red Light Distortion",
     description: "Dive into the universe of Red Light Distortion. Explore the band's lyrics, albums, and links to their music. Discover the sound and story of this French electronic metal band.",
@@ -33,7 +57,7 @@ function Universe() {
         <div className="universe-container">
             <TitleComponent titleContent="Universe" />
 
-            <div className="universe-content">
+            <article className="universe-content">
 
                 <p className="universe-presentation">
                     On all the Connexus reigns with an iron fist, the Lord Walrus.
@@ -44,8 +68,9 @@ function Universe() {
 
                 <TitleComponent titleContent="Songs and lyrics" />
 
+                {/* Lyrics component to display song lyrics */}
                 <Lyrics />
-            </div>
+            </article>
         </div>
     )
 }
