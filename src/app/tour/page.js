@@ -1,3 +1,23 @@
+/**
+ * Tour Page Component
+ * 
+ * This page displays the upcoming tour dates for the band "Red Light Distortion". 
+ * It fetches the tour dates either statically or dynamically based on the environment 
+ * variable NEXT_PUBLIC_STATIC_VERSION. 
+ *
+ * @component
+ * @returns {JSX.Element} The rendered Tour page with tour dates or error message.
+ * 
+ * @dependencies
+ * - axios: for making HTTP requests to fetch tour data.
+ * - getStaticTourDates: for retrieving static tour dates data.
+ * - TitleComponent: for displaying the page title.
+ * - Date: a child component that renders the individual tour dates.
+ * - ServerError: for handling errors in fetching the tour dates.
+ * 
+ * @author Yohann Delacroix
+ */
+
 import "../../styles/tour.css";
 import TitleComponent from "@/app/components/TitleComponent/TitleComponent";
 import ServerError from "@/app/components/ServerError/ServerError";
@@ -5,6 +25,7 @@ import Date from "./components/Date";
 import axios from "../../api/axios.js";
 import { getStaticTourDates } from "@/api/staticTourDates";
 
+// Metadata for SEO and social media sharing
 export const metadata = {
     title: "Red Light Distortion - Tour Dates",
     description: "Check out the latest tour dates for Red Light Distortion. Don't miss your chance to see the band live in concert. Get tickets now!",
@@ -30,7 +51,9 @@ export const metadata = {
     },
 };
 
+// Tour page component that displays tour dates dynamically or statically
 export default async function Tour() {
+    // Check if the static version of the tour dates should be used based on environment variables
     const isStaticVersion = process.env.NEXT_PUBLIC_STATIC_VERSION === "true";
     let tourDates = null;
 
@@ -43,7 +66,7 @@ export default async function Tour() {
 
         try {
             const res = await axios.get('/tour', {
-                headers: { 'Cache-Control': 'no-store' }
+                headers: { 'Cache-Control': 'no-store' }// Disable caching for fresh data
             });
 
             tourDates = res.data;
@@ -52,14 +75,13 @@ export default async function Tour() {
                 ? `Error ${error.response.status}: ${error.response.statusText}`
                 : error.message;
         }
-
     }
-
 
     return (
         <div className="tour-container">
             <TitleComponent titleContent="Tour Dates" />
 
+            {/* List of tour dates */}
             <ul className="tour-list">
                 <div>
                     {
