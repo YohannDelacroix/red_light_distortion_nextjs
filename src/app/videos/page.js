@@ -1,6 +1,22 @@
+/**
+ * Video Page Component
+ * 
+ * This page displays the videos available from Red Light Distortion, it's divided into two sections:
+ * The first for original songs and the seconds for covers videos
+ *
+ * @component
+ * @returns {JSX.Element} The rendered Tour page with tour dates or error message.
+ * 
+ * @dependencies
+ * - TitleComponent: for displaying the page title.
+ * 
+ * @author Yohann Delacroix
+ */
+
 import "@/styles/videos.css";
 import TitleComponent from "../components/TitleComponent/TitleComponent";
 
+// Metadata for SEO and social media sharing
 export const metadata = {
     title: "Red Light Distortion - Videos",
     description: "Watch official music videos, live performances, and exclusive footage of Red Light Distortion, the electronic metal band from France.",
@@ -32,7 +48,8 @@ function Videos() {
         <div className="videos-container">
             <TitleComponent titleContent="Our Music" />
 
-            <div className="videos-list">
+            { /* Original Song's Videos */ }
+            <section className="videos-list">
                 <iframe
                     className="video-frame"
                     src="https://www.youtube.com/embed/p0Y52_ej810"
@@ -51,18 +68,19 @@ function Videos() {
                     title="YouTube video player"
                     frameBorder="0"
                     allowFullScreen />
-            </div>
+            </section>
 
             <TitleComponent titleContent="Covers" />
 
-            <div className="videos-list">
+            { /* Covers Song's Videos */ }
+            <section className="videos-list">
                 <iframe
                     className="video-frame"
                     src="https://www.youtube.com/embed/HZIAnUmYJEs"
                     title="YouTube video player"
                     frameBorder="0"
                     allowFullScreen />
-            </div>
+            </section>
         </div>
     )
 }
