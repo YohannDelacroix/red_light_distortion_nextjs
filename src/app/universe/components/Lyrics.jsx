@@ -1,3 +1,36 @@
+/**
+ * Lyrics Component
+ * 
+ * @description This component is responsible for displaying the song lyrics of the band Red Light Distortion.
+ * It fetches the lyrics data from either a static or dynamic source and displays a list of songs.
+ * When a song is selected, its lyrics and description are shown in a section with smooth animations.
+ * The component supports responsive resizing, ensuring the lyrics section dynamically adjusts its height
+ * based on the content and the screen size.
+ *
+ * @state {Array} lyrics - Stores the list of songs and their lyrics.
+ * @state {Object} song - Stores the currently selected song and its details.
+ * @state {string|null} error - Stores error messages in case of a failed data fetch.
+ * @state {boolean} loading - Manages the loading state while lyrics are being fetched.
+ * @state {boolean} lyricsSection - Toggles the visibility of the lyrics section.
+ * @state {AbortController} stopResizing - Manages the abort signal for window resizing events.
+ *
+ * @function getLyrics - Fetches the lyrics data either from a static source or the server.
+ * @function handleDisplayLyrics - Changes the song displayed in the lyrics section.
+ * @function displayLyricsSection - Manages the opening/closing of the lyrics section and triggers animation effects.
+ * @function resizeWindow - Handles resizing logic for the lyrics section.
+ * @function triggerHeightAnimation - Requests an animation to adjust the height of the lyrics section.
+ *
+ * @dependencies axios - For making API requests to fetch dynamic lyrics data.
+ * @dependencies staticLyrics - For accessing static lyrics data.
+ * @dependencies ServerError - Component for displaying error state when the fetch fails.
+ * @dependencies Loading - Component for displaying loading state while the lyrics are being fetched.
+ *
+ * @component
+ * 
+ * @author Yohann Delacroix
+ * @date 2022-12
+ */
+
 "use client"
 import axios from "@/api/axios"
 import React from 'react'
