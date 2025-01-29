@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **Red Light Distortion Web**
 
-## Getting Started
+## Description
+Red Light Distortion Web is an official website for a music band that serves as a hub for fans and followers. The platform allows users to stay updated with the latest news about the band, including upcoming tour dates, new video releases, lyrics to their songs, biographies of the band members, and a gallery of photos. Additionally, visitors can subscribe to a newsletter to receive exclusive content and updates directly in their inbox.
 
-First, run the development server:
+The website is designed to provide a comprehensive and engaging experience for fans, offering everything they need to stay connected with the band and follow their musical journey.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Main Features**:
+- News Section: Stay up-to-date with the latest news and updates from the band. Get the latest information on releases, events, and important announcements.
+- Tour Dates: View upcoming concert dates, venues, and ticket information to never miss a live performance from the band.
+- Videos: Watch the latest music videos, live performances, and behind-the-scenes content to connect with the band on a deeper level.
+- Song Lyrics: Access the lyrics to all the band's songs and follow along with their music. Sing along to your favorite tracks!
+- Band Biographies: Learn more about the band members and their musical journey through detailed biographies and background stories.
+- Photo Gallery: Explore a collection of high-quality photos showcasing the band's performances, studio sessions, and other memorable moments.
+- Newsletter Subscription: Sign up for the band’s newsletter to receive exclusive updates, early access to new content, and special offers.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Demo
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+You can try the Red Light Distortion website online by clicking the following link:  
+[Red Light Distortion Web](https://redlightdistortion.netlify.app/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+This project was developed using the following technologies:
+- **React** (version 19)
+- **Next** (version 15)
+- **Javascript** 
+- **CSS** 
+- **Axios** - Requests to external APIs or backend services.
+- **Jest**
+- **React Testing Library** 
+- **Netlify** (for deployment)
 
-To learn more about Next.js, take a look at the following resources:
+### Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here’s an overview of the project structure with a description of each important file/folder:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+rld_website/
+│
+├── public/                  
+│   ├── fonts/                      # Font files (if any)
+│   ├── assets/                     # Static assets used throughout the website
+│   └── images/                     # Image assets used throughout the website
+│       ├── about/                  # Images for the "about" section
+│       ├── footer/                 # Images for the footer component
+│       ├── gallery/                # Images for the gallery section
+│       ├── header/                 # Images for the header component
+│       ├── home/                   # Images for the home page
+│       └── news/                   # Images for the news section
+│
+├── src/                    
+│   ├── app/                        # Main directory of Next.js containing routes, pages, layouts
+│   │   ├── components/             # Reusable components across the app
+│   │   │   ├── Footer/             # Footer component
+│   │   │   ├── Home/               # Home component
+│   │   │   ├── Header/             # Header component
+│   │   │   ├── Loading/            # Loading component
+│   │   │   ├── ServerError/        # Server Error component
+│   │   │   └── TitleComponent/     # Title component
+│   │   ├── about/                  # Route for "about" (biographies)
+│   │   ├── hooks/                  # Custom React hooks
+│   │   ├── photos/                 # Photos section
+│   │   ├── videos/                 # Videos section
+│   │   ├── news/                   # News section
+│   │   │   ├── components/         # Components for the news section
+│   │   │   ├── [id]/               # Nested route for dynamic news articles
+│   │   │   ├── page.js             # Main news page
+│   │   │   └── layout.js           # Layout for the news section
+│   │   ├── tour/                   # Tour section
+│   │   │   ├── components/         # Components for the tour section
+│   │   │   └── page.js             # Tour page
+│   │   └── universe/               # Universe section
+│   │       ├── components/         # Components for the universe section
+│   │       └── page.js             # Universe page
+│   ├── styles/                     # CSS styles (global and component-specific)
+│   └── api/                        # API-related code (static data, API calls)
+│
+├── data/                           # Contains the data directory
+│   └── imageList.json              # Generated image list for the project
+│
+├── next.config.js                  # Next.js configuration file
+├── package.json                    # Project metadata, dependencies, and scripts
+├── README.md                       # Project documentation
+├── generateImageList.js            # Script to generate image list (imageList.json)
+└── yarn.lock / package-lock.json   # Dependency lock files (yarn or npm)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Authors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    Yohann Delacroix – Full-Stack Developer
