@@ -39,7 +39,7 @@ const HomeNewsletterSection = () => {
 
     return (
         <section
-            className="home-home-newsletterform"
+            className="home-newsletter home-home-newsletterform"
             aria-labelledby="newsletter-section-title"
             aria-describedby="newsletter-desc">
 

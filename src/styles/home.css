@@ -59,14 +59,15 @@
 
 .home-tour,
 .home-news,
-.home-photos {
+.home-photos,
+.home-newsletter {
     display: block;
     position: relative;
     width: 100%;
     padding: 15px 5px;
     text-align: center;
     margin-top: 100px;
-}
+} 
 
 .home-link {
     color: inherit;
