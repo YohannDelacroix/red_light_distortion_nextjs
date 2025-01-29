@@ -20,6 +20,10 @@
 
 }
 
+.newscontent-date {
+    font-weight: bolder;
+}
+
 .newscontent-main-img {
     display: inline;
     max-width: 100%;

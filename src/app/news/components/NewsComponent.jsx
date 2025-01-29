@@ -2,8 +2,21 @@
 import "@/styles/news.css";
 import { useState } from 'react'
 
+/**
+ * @component NewsComponent
+ * @description Displays a clickable news card with a dynamic background.
+ * The background changes when hovered, and the news title and date appear/disappear accordingly.
+ * @param {Object} props.newsContent - The news content data.
+ * @param {string} props.newsContent.title - The title of the news.
+ * @param {string} props.newsContent.date - The publication date of the news.
+ * @param {string} props.newsContent.img - The background image URL.
+ * @returns {JSX.Element}
+ * 
+ * @author Yohann Delacroix
+ */
+
 function NewsComponent({ newsContent }) {
-    //This part make the background of the news component change when the mouse is over
+    //This part make the background of the news component changing when the mouse comes in or out
     const backgroundImageNormal = {
         backgroundImage: "url(" + newsContent.img + ")"
     };
@@ -11,32 +24,41 @@ function NewsComponent({ newsContent }) {
         backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url(" + newsContent.img + ")"
     };
 
-    const [backgroundImage, setBackgroundImage] = useState(backgroundImageDark);
-    const [displayContent, setDisplayContent] = useState(true);
+    const [backgroundImage, setBackgroundImage] = useState(backgroundImageDark); 
+    const [isContentVisible, setIsContentVisible] = useState(true);
 
-    //Event when the mouse enter in the news square
+    /**
+     * Handles the mouse entering the news card.
+     * Changes the background and hides the content.
+     */
     const mouseIn = () => {
         setBackgroundImage(backgroundImageNormal);
-        setDisplayContent(false);
+        setIsContentVisible(false);
     };
-    //Event when the mouse go out of the news square
+
+    /**
+     * Handles the mouse leaving the news card.
+     * Restores the background and displays the content.
+     */
     const mouseOut = () => {
         setBackgroundImage(backgroundImageDark);
-        setDisplayContent(true);
+        setIsContentVisible(true);
     };
 
     return (<div className="news-component-background"
         style={backgroundImage}
         onMouseEnter={mouseIn}
-        onMouseLeave={mouseOut}>
-        {displayContent &&
+        onMouseLeave={mouseOut}
+        role="button"
+        aria-label={`Read news: ${newsContent.title}`}>
+        {isContentVisible &&
             <div className="news-component-content">
-                <div className="news-component-content-title">
+                <h3 className="news-component-content-title">
                     {newsContent.title}
-                </div>
-                <div className="news-component-content-date">
+                </h3>
+                <time className="news-component-content-date">
                     {newsContent.date}
-                </div>
+                </time>
             </div>
         }
     </div>)

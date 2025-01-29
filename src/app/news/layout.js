@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Layout component for the News page.
+ * @description Displays the latest news and dynamically loads news content.
+ * @author Yohann Delacroix
+ * @version 1.0.0
+ */
+
 import "@/styles/news.css"
 import TitleComponent from "../components/TitleComponent/TitleComponent";
 import NewsComponent from "./components/NewsComponent";
