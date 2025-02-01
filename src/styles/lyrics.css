@@ -83,6 +83,7 @@
     height: 20px;
     max-height: 20px;
     overflow: hidden;
+    line-height: 1;
 }
 
 .universe-song-button-close {

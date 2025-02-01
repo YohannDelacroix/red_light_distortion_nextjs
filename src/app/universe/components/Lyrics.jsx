@@ -62,7 +62,7 @@ const Lyrics = () => {
                     const response = await axios.get('/lyrics')
                     setLyrics(response.data)
                 }
-                
+
                 setError(null)
             }
             catch (err) {
@@ -84,7 +84,6 @@ const Lyrics = () => {
 
     //Change the song displayed on screen
     const handleDisplayLyrics = (song) => {
-        console.log("okdakk")
         setLyricsSection(true)
         setSong(emptySong) //Allow the user to go back to the song he closed
         setSong(song)
@@ -109,8 +108,9 @@ const Lyrics = () => {
 
         //2 - Calcul the height of the universe-song div
         const calcHeight = () => {
-            //Get the margins of a block
+            //Function : return the margins top and bottom from a given block
             const getMargins = (blockElem) => {
+                if(!blockElem) return -1;
                 let style = blockElem.currentStyle || window.getComputedStyle(blockElem);
                 let marginTop = parseInt(style.marginTop, 10);
                 let marginBottom = parseInt(style.marginBottom, 10);
@@ -181,7 +181,10 @@ const Lyrics = () => {
                 elemUniverseSong.classList.add("us-newitem");
                 document.getElementById("universe-song-button-close").classList.remove("disappear-animation");
 
-                triggerHeightAnimation(); //Height transition animation
+                setTimeout(() => {
+                    triggerHeightAnimation();
+                }, 0);
+                //triggerHeightAnimation(); //Height transition animation
 
                 window.addEventListener("resize", resizeWindow, stopResizing);
             }
@@ -216,11 +219,12 @@ const Lyrics = () => {
             {error && <ServerError />}
 
             <div className="lyrics-container">
-                <div id="universe-song" className="universe-song">
+                <div id="universe-song" className="universe-song" data-testid="universe-song">
                     <div className="universe-song-content" id="universe-song-content">
                         <div className="universe-song-top-section" id="universe-song-top-section">
                             <h5 className="universe-song-top-section-title">{song.title}</h5>
                             <button id="universe-song-button-close"
+                                data-testid="universe-song-button-close"
                                 className="universe-song-button-close"
                                 onClick={() => displayLyricsSection(false)}>X</button>
                             <div className='universe-song-top-section-line'></div>
@@ -232,7 +236,12 @@ const Lyrics = () => {
 
                         <div className="universe-song-lyrics">
                             <h4 id="universe-song-lyrics-title">Lyrics</h4>
-                            {song.lyrics_en.map((sentence, index) => (<div key={index} className="universe-song-lyrics-sentence">{sentence}</div>))}
+                            {song.lyrics_en.map((sentence, index) => (
+                                song.lyrics_en.length - 1 === index ?
+                                    <div key={index} className="universe-song-lyrics-sentence" data-testid="uslt-last">{sentence}</div>
+                                    :
+                                    <div key={index} className="universe-song-lyrics-sentence">{sentence}</div>
+                            ))}
                         </div>
                     </div>
                 </div>
