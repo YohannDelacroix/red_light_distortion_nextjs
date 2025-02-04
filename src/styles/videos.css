@@ -13,7 +13,7 @@
     background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(0, 0, 0)), to(rgb(128, 0, 0)));
     background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(128, 0, 0));
     z-index: 1;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 .videos-list {
@@ -39,6 +39,43 @@
     height: 300px;
     margin-bottom: 20px;
     max-height: 100%;
+}
+
+.video-thumbnail-container{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+
+.video-thumbnail-player{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    opacity: 0.6;
+}
+
+.video-thumbnail-player-icon{
+    color: white;
+    font-size: 55px;
+    transition: "opacity 0.3s ease-in-out";
+    opacity: 0.5;
+}
+
+.video-thumbnail-player-icon:hover{
+    color: white;
+    opacity: 0.9;
+}
+
+.video-thumbnail{
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    margin: 10px 0em;
 }
 
 @media only screen and (min-width:990px) {

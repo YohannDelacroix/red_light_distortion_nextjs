@@ -16,6 +16,7 @@ const HomeVideoSection = ({videoSrc}) => {
                     title="YouTube video player"
                     allowFullScreen
                     origin="http://localhost:3000"
+                    loading="lazy"
                 />
             </div>
         </section>

@@ -3,6 +3,9 @@
  * 
  * This page displays the videos available from Red Light Distortion, it's divided into two sections:
  * The first for original songs and the seconds for covers videos
+ * 
+ * Load a JSON file containing videos ID , alt and titles
+ * Uses the component VideoThumbnail to increase performances
  *
  * @component
  * @returns {JSX.Element} The rendered Tour page with tour dates or error message.
@@ -15,6 +18,8 @@
 
 import "@/styles/videos.css";
 import TitleComponent from "../components/TitleComponent/TitleComponent";
+import videosSrc from "@/../data/youtubeVideosList.json";
+import VideoThumbnail from "./components/VideoThumbnail";
 
 // Metadata for SEO and social media sharing
 export const metadata = {
@@ -48,38 +53,30 @@ function Videos() {
         <div className="videos-container">
             <TitleComponent titleContent="Our Music" />
 
-            { /* Original Song's Videos */ }
+            { /* Original Song's Videos */}
             <section className="videos-list">
-                <iframe
-                    className="video-frame"
-                    src="https://www.youtube.com/embed/p0Y52_ej810"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allowFullScreen />
-                <iframe
-                    className="video-frame"
-                    src="https://www.youtube.com/embed/1dG4USdI4gk"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allowFullScreen />
-                <iframe
-                    className="video-frame"
-                    src="https://www.youtube.com/embed/gTMZEDhnLUI"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allowFullScreen />
+                {
+                    videosSrc.originals.map((video, index) =>
+                    (<VideoThumbnail
+                        key={`${video.title}-${index}`}
+                        videoId={video.videoId}
+                        alt={video.alt}
+                        title={video.title} />))
+                }
             </section>
 
             <TitleComponent titleContent="Covers" />
 
-            { /* Covers Song's Videos */ }
+            { /* Covers Song's Videos */}
             <section className="videos-list">
-                <iframe
-                    className="video-frame"
-                    src="https://www.youtube.com/embed/HZIAnUmYJEs"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allowFullScreen />
+                {
+                    videosSrc.originals.map((video, index) =>
+                    (<VideoThumbnail
+                        key={`${video.title}-${index}`}
+                        videoId={video.videoId}
+                        alt={video.alt}
+                        title={video.title} />))
+                }
             </section>
         </div>
     )
