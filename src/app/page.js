@@ -32,12 +32,12 @@ import HomeNewsSection from "./components/Home/HomeNewsSection/HomeNewsSection";
 import HomePhotosSection from "./components/Home/HomePhotosSection/HomePhotosSection";
 
 export default function Home() {
-    const videoSrc = "https://www.youtube.com/embed/p0Y52_ej810"; //Youtube Video in front of the home page
+    const videoId = "p0Y52_ej810"; //Youtube Video ID in front of the home page
     
     return (
         <main className="home">
             {/* Video Section */}
-            <HomeVideoSection videoSrc={videoSrc} />
+            <HomeVideoSection videoId={videoId} />
 
             {/* Newsletter Section */}
             <HomeNewsletterSection />

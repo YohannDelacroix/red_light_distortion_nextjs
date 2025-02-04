@@ -70,7 +70,7 @@ function Videos() {
             { /* Covers Song's Videos */}
             <section className="videos-list">
                 {
-                    videosSrc.originals.map((video, index) =>
+                    videosSrc.covers.map((video, index) =>
                     (<VideoThumbnail
                         key={`${video.title}-${index}`}
                         videoId={video.videoId}

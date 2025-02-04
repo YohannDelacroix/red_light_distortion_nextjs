@@ -8,7 +8,7 @@
 .videos-container {
     display: block;
     position: relative;
-    padding: 130px 5px 15px 5px;
+    padding: 130px 25px 15px 25px;
     background-image: -o-linear-gradient(bottom, rgb(0, 0, 0), rgb(128, 0, 0));
     background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(0, 0, 0)), to(rgb(128, 0, 0)));
     background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(128, 0, 0));
@@ -33,17 +33,39 @@
     margin-top: 20px;
 }
 
+.iframe-container{
+    position: relative;
+    width: 100%; 
+    overflow: hidden;
+    padding-top: 56.25%;  /* Ratio 16:9 (9 / 16 = 0.5625) */
+}
+
 .video-frame {
     display: block;
     width: 100%;
-    height: 300px;
-    margin-bottom: 20px;
-    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-thumbnail{
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
 }
 
 .video-thumbnail-container{
     position: relative;
     cursor: pointer;
+    
     width: 100%;
 }
 
@@ -70,27 +92,8 @@
     opacity: 0.9;
 }
 
-.video-thumbnail{
-    display: block;
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    margin: 10px 0em;
-}
-
 @media only screen and (min-width:990px) {
     .videos-container {
         padding: 130px 200px 15px 200px;
-    }
-
-    .video-frame {
-        width: 700px !important;
-        height: 400px;
-    }
-}
-
-@media only screen and (min-width:500px) {
-    .video-frame {
-        width: 500px;
     }
 }

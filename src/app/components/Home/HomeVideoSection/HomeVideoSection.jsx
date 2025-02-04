@@ -4,20 +4,18 @@
  * This section is used to showcase a featured video on the homepage.
  */
 
+import VideoThumbnail from '@/app/videos/components/VideoThumbnail'
 import React from 'react'
 
-const HomeVideoSection = ({videoSrc}) => {
+const HomeVideoSection = ({ videoId }) => {
     return (
         // Section to hold the embedded video player
         <section className="home-video">
             <div className="container-video">
-                <iframe className="iframe-video"
-                    src={videoSrc}
-                    title="YouTube video player"
-                    allowFullScreen
-                    origin="http://localhost:3000"
-                    loading="lazy"
-                />
+                <VideoThumbnail
+                    videoId={videoId}
+                    title={"Red Light Distortion Home video"}
+                    alt={"Last video from Red Light Distortion"} />
             </div>
         </section>
     )
