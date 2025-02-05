@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { FaPlay } from "react-icons/fa";
 import "@/styles/videos.css"
 
@@ -8,8 +8,9 @@ import "@/styles/videos.css"
  * VideoThumbnail Component
  * 
  * This component displays a YouTube video thumbnail that, when clicked, 
- * replaces itself with the embedded YouTube player. It also supports 
- * an optional autoplay feature, which starts playing the video after a delay.
+ * replaces itself with the embedded YouTube player.
+ * The component uses IntersectionObserver to load the video iframe only 
+ * when it is visible on the screen, improving performance by avoiding unnecessary loading.
  * 
  * Props:
  * @param {string} videoId - The YouTube video ID.
@@ -18,32 +19,41 @@ import "@/styles/videos.css"
  * @param {boolean} [autoPlay=false] - Whether the video should autoplay after a delay.
  */
 
+
 const VideoThumbnail = ({ videoId, alt, title, autoPlay = false }) => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const videoRef = useRef(null);
 
-    // Automatically start the video after 2 seconds if autoPlay is enabled
+    // useEffect hook to handle lazy loading of the video when it becomes visible
     useEffect(() => {
-        if (autoPlay) {
-            const timer = setTimeout(() => {
-                setIsPlaying(true);
-            }, 2000); 
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsPlaying(true); // Start playing when video is visible
+                    observer.disconnect(); // Stop observing after the video is loaded
+                }
+            },
+            { threshold: 0.5 } // Load the iframe when at least 50% of the video is in the viewport
+        );
 
-            return () => clearTimeout(timer); // Cleanup the timer on unmount
-        }
-    }, [autoPlay]);
+        if (videoRef.current) observer.observe(videoRef.current);
+
+        return () => observer.disconnect();
+    }, []);
 
     return isPlaying ? (
         // Render the embedded YouTube video when playing
-        <div className="iframe-container">
+        <div ref={videoRef} className="iframe-container">
             <iframe
                 src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
                 title={title}
                 className="video-frame"
+                loading="lazy"
             />
         </div>
     ) : (
         // Render the video thumbnail with a play button
-        <div className='video-thumbnail-container'
+        <div ref={videoRef} className='video-thumbnail-container'
             onClick={() => setIsPlaying(true)}>
             <div className="video-thumbnail-player">
                 <FaPlay className="video-thumbnail-player-icon" />
