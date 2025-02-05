@@ -37,7 +37,7 @@ header {
     max-width: 100%;
     z-index: 1000;
 }
-
+ 
 .header-nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -170,6 +170,10 @@ header {
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        position: fixed;
+        top:0;
+        left:0;
+        height:110px;
     }
 
     .header-mobile {
@@ -182,7 +186,7 @@ header {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1001;
         opacity: 0.8;
-    }
+    }       
 
     .header-logo {
         display: block;
