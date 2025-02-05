@@ -16,7 +16,7 @@ const HomeVideoSection = ({ videoId }) => {
                     videoId={videoId}
                     title={"Red Light Distortion Home video"}
                     alt={"Last video from Red Light Distortion"}
-                    autoPlay={true} />
+                     />
             </div>
         </section>
     )
