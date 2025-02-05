@@ -55,6 +55,16 @@
     flex-wrap: wrap;
 }
 
+.date-place {
+    display: block;
+    text-align: right;
+    width: 90%;
+}
+
+.date-place-city {
+    font-weight: bolder;
+}
+
 .date-links {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -70,28 +80,24 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    gap: 5px;
     padding-top: 10px;
+    color: white;
 }
 
-.date-place {
-    display: block;
-    text-align: right;
-    width: 90%;
-}
-
-.date-place-city {
-    font-weight: bolder;
+.w-100{
+    width: 100%;
 }
 
 .date-more {
     display: block;
-
+    width: 90px;
     text-align: center;
 }
 
 .date-ticket {
     display: block;
-    margin-left: 5px;
+    width: 90px;
     text-align: center;
 }
 
@@ -111,7 +117,7 @@
     padding-right: 10px;
 }
 
-@media only screen and (min-width:960px) {
+@media only screen and (min-width:1040px) {
     .tour-container {
         padding: 130px 200px 15px 200px;
     }
@@ -120,11 +126,12 @@
 @media only screen and (min-width:795px) {
     .date-place {
         width: 50%;
-        text-align: left;
+        text-align: left;   
     }
 
     .date-links {
         width: 30%;
+        padding-top: 0;
     }
 
     .date-container {
