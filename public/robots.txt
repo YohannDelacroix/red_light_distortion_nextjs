@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://redlightdistortion.netlify.app/sitemap.xml

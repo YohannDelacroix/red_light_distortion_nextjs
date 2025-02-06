@@ -36,7 +36,7 @@ const HomePhotosSection = () => {
                     //Slice 0 , 3 to select the first three photos
                     images.slice(0, 3).map((image, index) => (
                         <div className="photo-gallery-img-container" key={image}>
-                            <a href={image}>
+                            <a href={image} aria-label={`View larger image ${index + 1}`}>
                                 <Image
                                     src={image}
                                     alt={`Photo ${index + 1}`}

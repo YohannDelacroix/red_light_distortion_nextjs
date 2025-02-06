@@ -37,7 +37,7 @@ const HomeNewsSection = () => {
             <div className="news-list">
                 {
                     news.slice(0, 4).map((news, index) => (
-                        <Link key={`${news.title}-${index}`} href={`/news/${news.id}`}>
+                        <Link key={`${news.title}-${index}`} href={`/news/${news.id}`} aria-label={`Read more: ${news.title}`}>
                             <NewsComponent newsContent={news} />
                         </Link>
                     ))
