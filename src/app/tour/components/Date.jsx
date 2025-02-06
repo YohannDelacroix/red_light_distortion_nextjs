@@ -60,7 +60,7 @@ function Date({ date_content }) {
         {/* Render the links if available */}
         <div className="date-links">
             <div data-testid="more-link" className={dateMore}> 
-                <a href={date_content.more_link} target="_blank" rel="noreferrer" aria-label={`More info about the event in ${date_content.place_geo}, ${date_content.place_name}`}><button className="w-100">More info</button></a>
+                <a href={date_content.more_link} target="_blank" rel="noreferrer" aria-label={`More info about the event in ${date_content.place_geo}, ${date_content.place_name}`}><button className="w-100">Infos</button></a>
             </div>
 
             <div data-testid="ticket-link" className={dateTicket}>
