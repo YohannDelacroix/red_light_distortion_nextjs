@@ -39,12 +39,13 @@ const VideoThumbnail = ({ videoId, alt, title }) => {
                 <FaPlay className="video-thumbnail-player-icon" />
             </div>
             <Image
-                src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-                alt={alt}
-                width={16}
-                height={9}
+                src={`/thumbnails/${videoId}_th.jpg`}
+                alt={`/thumbnails/${videoId}_th.jpg`}
+                width={120}
+                height={90}
                 sizes="100vw"
-                className="video-thumbnail">
+                className="video-thumbnail"
+                priority>
             </Image>
         </div>
 
