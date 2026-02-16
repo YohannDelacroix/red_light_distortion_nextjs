@@ -9,10 +9,10 @@ export const metadata = {
     openGraph: {
         title: "Red Light Distortion - Official Website",
         description: "Welcome to the official website of Red Light Distortion, your source for the latest updates, music, and tours from the French electronic metal band.",
-        url: "http://redlightidistortion.netlify.app",
+        url: "https://redlightidistortion.netlify.app",
         images: [
             {
-                url: "http://redlightidistortion.netlify.app/images/header/rldlogofondnoir.jpg", 
+                url: "https://redlightidistortion.netlify.app/images/header/rldlogofondnoir.jpg", 
                 width: 1200,
                 height: 630,
                 alt: "Red Light Distortion logo with a dark background",
@@ -26,7 +26,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Red Light Distortion - Official Website",
         description: "Explore the music and journey of Red Light Distortion, the French electronic metal band.",
-        images: ["http://redlightidistortion.netlify.app/images/header/rldlogofondnoir.jpg"],
+        images: ["https://redlightidistortion.netlify.app/images/header/rldlogofondnoir.jpg"],
     },
 };
 
