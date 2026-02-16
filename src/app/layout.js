@@ -9,21 +9,24 @@ export const metadata = {
     openGraph: {
         title: "Red Light Distortion - Official Website",
         description: "Welcome to the official website of Red Light Distortion, your source for the latest updates, music, and tours from the French electronic metal band.",
-        url: "https://www.redlightdistortion.com",
+        url: "http://redlightidistortion.netlify.app",
         images: [
             {
-                url: "/images/header/RLDLogoFondNoir.jpg", 
+                url: "http://redlightidistortion.netlify.app/images/header/RLDLogoFondNoir.jpg", 
                 width: 1200,
                 height: 630,
                 alt: "Red Light Distortion logo with a dark background",
             },
         ],
+
+        locale: "en_US",
+        type: "website",
     },
     twitter: {
         card: "summary_large_image",
         title: "Red Light Distortion - Official Website",
         description: "Explore the music and journey of Red Light Distortion, the French electronic metal band.",
-        images: ["/images/header/RLDLogoFondNoir.jpg"],
+        images: ["http://redlightidistortion.netlify.app/images/header/RLDLogoFondNoir.jpg"],
     },
 };
 
