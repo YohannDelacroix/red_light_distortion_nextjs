@@ -21,7 +21,7 @@ export const metadata = {
         url: "https://www.redlightdistortion.com/news", 
         images: [
             {
-                url: "/images/header/RLDLogoFondNoir.jpg",
+                url: "/images/header/rldlogofondnoir.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Latest news about Red Light Distortion",
@@ -32,7 +32,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Red Light Distortion - Latest News",
         description: "Stay informed with the latest news and updates about Red Light Distortion.",
-        images: ["/images/header/RLDLogoFondNoir.jpg"],
+        images: ["/images/header/rldlogofondnoir.jpg"],
     },
 };
 

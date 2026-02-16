@@ -63,7 +63,7 @@ const Header = () => {
                 <h1 className="header-logo">
                     <Link className="header-link-image" href="/">
                         <Image
-                            src="/images/header/RLDLogoFondNoir.jpg"
+                            src="/images/header/rldlogofondnoir.jpg"
                             alt="Red Light Distortion - Official Website"
                             width={778}
                             height={306}

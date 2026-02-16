@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
-                <link rel="icon" href="/images/RLDLogoFondNoir.ico" />
+                <link rel="icon" href="/images/rldlogofondnoir.ico" />
             </head>
             <body>
                 <Header />

@@ -54,7 +54,7 @@ export default function Home() {
             {/* Branding Logo Section */}
             <section className="home-logo">
                 <Image
-                    src="/images/header/RLDLogoFondNoir.jpg"
+                    src="/images/header/rldlogofondnoir.jpg"
                     alt="Red Light Distortion Logo"
                     width={389}
                     height={153}
