@@ -23,7 +23,7 @@ You can try the Red Light Distortion website online by clicking the following li
 
 This project was developed using the following technologies:
 - **React** (version 19)
-- **Next** (version 15)
+- **Next** (version 16)
 - **Javascript** 
 - **CSS** 
 - **Axios** - Requests to external APIs or backend services.
