@@ -12,7 +12,7 @@ export const metadata = {
         url: "http://redlightidistortion.netlify.app",
         images: [
             {
-                url: "http://redlightidistortion.netlify.app/images/header/RLDLogoFondNoir.jpg", 
+                url: "http://redlightidistortion.netlify.app/images/header/rldlogofondnoir.jpg", 
                 width: 1200,
                 height: 630,
                 alt: "Red Light Distortion logo with a dark background",
@@ -26,7 +26,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Red Light Distortion - Official Website",
         description: "Explore the music and journey of Red Light Distortion, the French electronic metal band.",
-        images: ["http://redlightidistortion.netlify.app/images/header/RLDLogoFondNoir.jpg"],
+        images: ["http://redlightidistortion.netlify.app/images/header/rldlogofondnoir.jpg"],
     },
 };
 
