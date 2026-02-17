@@ -41,8 +41,9 @@ export async function generateStaticParams() {
  * @param {Object} params - Dynamic parameters containing the news article's ID to display.
  * @returns {JSX.Element}
  */
-function NewsContent({ params }) {
-    let news = getNews(params.id);
+async function NewsContent({ params }) {
+    const { id } = await params;
+    let news = getNews(id);
     if (!news) {
         notFound();
     }
