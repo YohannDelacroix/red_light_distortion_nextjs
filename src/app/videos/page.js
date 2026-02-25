@@ -17,9 +17,7 @@
  */
 
 import "@/styles/videos.css";
-import TitleComponent from "../components/TitleComponent/TitleComponent";
-import videosSrc from "@/../data/youtubeVideosList.json";
-import VideoThumbnail from "./components/VideoThumbnail";
+import VideosComponent from "../media/components/VideosComponent";
 
 // Metadata for SEO and social media sharing
 export const metadata = {
@@ -51,33 +49,7 @@ export const metadata = {
 function Videos() {
     return (
         <div className="videos-container">
-            <TitleComponent titleContent="Our Music" />
-
-            { /* Original Song's Videos */}
-            <section className="videos-list">
-                {
-                    videosSrc.originals.map((video, index) =>
-                    (<VideoThumbnail
-                        key={`${video.title}-${index}`}
-                        videoId={video.videoId}
-                        alt={video.alt}
-                        title={video.title} />))
-                }
-            </section>
-
-            <TitleComponent titleContent="Covers" />
-
-            { /* Covers Song's Videos */}
-            <section className="videos-list">
-                {
-                    videosSrc.covers.map((video, index) =>
-                    (<VideoThumbnail
-                        key={`${video.title}-${index}`}
-                        videoId={video.videoId}
-                        alt={video.alt}
-                        title={video.title} />))
-                }
-            </section>
+            <VideosComponent />
         </div>
     )
 }
