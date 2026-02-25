@@ -4,7 +4,7 @@
  * This section is used to showcase a featured video on the homepage.
  */
 
-import VideoThumbnail from '@/app/videos/components/VideoThumbnail'
+import VideoThumbnail from '@/app/media/components/VideoThumbnail'
 import React from 'react'
 
 const HomeVideoSection = ({ videoId }) => {
