@@ -1,9 +1,8 @@
 /**
- * Universe Component
+ * Music Component
  *
- * @description This component renders the "Universe" page for the Red Light Distortion website, 
+ * @description This component renders the "Music" page for the Red Light Distortion website, 
  * providing an immersive experience into the band's world. It includes:
- * - A presentation of the band with narrative text
  * - A section displaying the band's song lyrics
  * 
  * @component
@@ -22,12 +21,12 @@
  */
 
 import "@/styles/universe.css";
-import UniverseComponent from "../music/components/UniverseComponent";
+import MusicComponent from "./components/MusicComponent";
 
 // Metadata for SEO and social media sharing
 export const metadata = {
-    title: "Universe - Red Light Distortion",
-    description: "Dive into the universe of Red Light Distortion. Explore the band's lyrics, albums, and links to their music. Discover the sound and story of this French electronic metal band.",
+    title: "Music - Red Light Distortion",
+    description: "Dive into the universe of Red Light Distortion. Explore the band's songs, ep, lyrics, and links to their music. Discover the sound and story of this French electronic metal band.",
     keywords: "Red Light Distortion, lyrics, music universe, electronic metal, song lyrics, music links, French band, albums, band universe",
     openGraph: {
         title: "Universe - Red Light Distortion",
@@ -51,12 +50,12 @@ export const metadata = {
     },
 };
 
-function Universe() {
+function Music() {
     return (
-        <div>
-            <UniverseComponent />
+        <div className="universe-container">
+            <MusicComponent />
         </div>
     )
 }
 
-export default Universe;
+export default Music;
