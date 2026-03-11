@@ -16,13 +16,17 @@ import songList from "@/../data/soundTrack.json"
 const MusicComponent = () => {
 
     return (<div>
-        <TitleComponent titleContent="Music" />
+        <TitleComponent titleContent="Music" level={3} />
         <div className="songList">
             {songList.songs.map((song) => (
-                <SoundCloudPlayerComponent
-                    key={song.id}
-                    url={song.soundCloudUrl}
-                />
+                <div>
+                    <TitleComponent titleContent={song.title} />
+                    <SoundCloudPlayerComponent
+                        key={song.id}
+                        url={song.soundCloudUrl}
+                    />
+                </div>
+                
             ))}
         </div>
         <UniverseComponent />
