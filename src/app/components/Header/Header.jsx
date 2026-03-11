@@ -26,10 +26,10 @@ const Header = () => {
     //Here are the header links, simply change the order or the routes if needed 
     const links = [
         { label: "Tour", href: "/tour" },
-        { label: "News", href: "/news" },
+        { label: "Music", href: "/music" },
         { label: "Photos", href: "/photos" },
         { label: "Videos", href: "/videos" },
-        { label: "Universe", href: "/universe" },
+        { label: "News", href: "/news" },
         { label: "About", href: "/about" },
     ];
 
