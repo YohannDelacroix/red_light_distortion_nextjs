@@ -27,14 +27,13 @@ const Header = () => {
     const links = [
         { label: "Tour", href: "/tour" },
         { label: "Music", href: "/music" },
-        { label: "Photos", href: "/photos" },
-        { label: "Videos", href: "/videos" },
-        { label: "News", href: "/news" },
+        { label: "Media", href: "/media" },
         { label: "About", href: "/about" },
     ];
 
-    const leftLinks = links.slice(0, 3); //Group the 3 first links for the left header
-    const rightLinks = links.slice(3);  //Group the last links for the right header
+    const headerDivisionRules = (links.length)/2;
+    const leftLinks = links.slice(0, headerDivisionRules); //Group the 3 first links for the left header
+    const rightLinks = links.slice(headerDivisionRules);  //Group the last links for the right header
 
     return (
         <header data-testid="header" className="header-desktop">
