@@ -24,6 +24,7 @@ import ServerError from "@/app/components/ServerError/ServerError";
 import Date from "./components/Date";
 import axios from "../../api/axios.js";
 import { getStaticTourDates } from "@/api/staticTourDates";
+import { getStaticPastDates } from "@/api/staticTourDates";
 
 // Metadata for SEO and social media sharing
 export const metadata = {
@@ -56,10 +57,12 @@ export default async function Tour() {
     // Check if the static version of the tour dates should be used based on environment variables
     const isStaticVersion = process.env.NEXT_PUBLIC_STATIC_VERSION === "true";
     let tourDates = null;
+    let pastDates = null;
 
     if (isStaticVersion) {
         // Static version
         tourDates = getStaticTourDates();
+        pastDates = getStaticPastDates();
     } else {
         // Dynamic version
         let errorMessage = null;
@@ -79,7 +82,7 @@ export default async function Tour() {
 
     return (
         <div className="tour-container">
-            <TitleComponent titleContent="Tour Dates" />
+            <TitleComponent titleContent="Upcoming Tour Dates" />
 
             {/* List of tour dates */}
             <ul className="tour-list">
@@ -89,6 +92,22 @@ export default async function Tour() {
                             tourDates.length === 0 ? <div className="tour-nodate">No upcoming tour dates</div> : (
                                 tourDates.map((date, index) => (
                                     <li key={`${date.day}-${date.month}-${date.year}`}><Date date_content={tourDates[index]} /></li>
+                                ))
+                            )
+                        ) : <ServerError />
+                    }
+                </div>
+            </ul>
+            
+            <TitleComponent titleContent="Past Tour Dates" />
+            {/* List of tour dates */}
+            <ul className="tour-list">
+                <div>
+                    {
+                        pastDates !== null ? (
+                            pastDates.length === 0 ? <div className="tour-nodate">No upcoming tour dates</div> : (
+                                pastDates.map((date, index) => (
+                                    <li key={`${date.day}-${date.month}-${date.year}`}><Date date_content={pastDates[index]} /></li>
                                 ))
                             )
                         ) : <ServerError />

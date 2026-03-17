@@ -17,43 +17,35 @@
  */
 
 const staticTourDates = [
+]
+
+const pastDates = [
+  {
+    day: 21,
+    month: 'OCT',
+    year: 2021,
+    place_geo: 'Angers, France',
+    place_name: "T'es rock Coco",
+    ticket_link: '',
+    more_link: ''
+  },
   {
     day: 1,
-    month: 'JAN',
-    place_geo: 'München, Bayern Deutschland',
-    place_name: 'Die Welt',
+    month: 'DEC',
+    year: 2022,
+    place_geo: 'Orléans, France',
+    place_name: "Le bouillon, Université d'Orléans",
     ticket_link: '',
     more_link: ''
   },
-  {
-    day: 3,
-    month: 'FEB',
-    place_geo: 'Angers, Pays de la Loire, France',
-    place_name: 'T es rock coco',
-    ticket_link: 'http://google.com',
-    more_link: ''
-  },
-
-  {
-    day: 30,
-    month: 'FEB',
-    place_geo: 'Budapest, Hungary',
-    place_name: 'Caligula',
-    ticket_link: '',
-    more_link: 'http://google.com'
-  },
-  {
-    day: 18,
-    month: 'AUG',
-    place_geo: 'Paris, Île de France, France',
-    place_name: 'Bercy',
-    ticket_link: 'http://google.com',
-    more_link: 'http://google.com'
-  }
 ]
 
 export const getStaticTourDates = () => {
   return [...staticTourDates]
+}
+
+export const getStaticPastDates = () => {
+  return [...pastDates]
 }
 
 

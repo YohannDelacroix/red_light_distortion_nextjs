@@ -47,8 +47,8 @@ function Date({ date_content }) {
     return (<div className="date-container">
         {/* Display the event date */}
         <time className="date-date">
-            <div className="date-date-month">{date_content.month}</div>
-            <div className="date-date-day">{date_content.day}</div>
+            <div className="date-date-month">{date_content.month}, {date_content.day}</div>
+            <div className="date-date-year">{date_content.year}</div>
         </time>
 
         {/* Display the event place and venue */}
