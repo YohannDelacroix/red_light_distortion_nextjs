@@ -1,4 +1,4 @@
-import HomeVideoSection from "./HomeVideoSection";
+import HomeVideoSection from "../HomeVideoSection";
 import { render } from "@testing-library/react";
 
 describe("Home Video Section Test Suites", () => {
