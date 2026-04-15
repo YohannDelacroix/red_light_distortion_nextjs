@@ -20,7 +20,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import TitleComponent from '../../TitleComponent/TitleComponent'
+import TitleComponent from '../TitleComponent/TitleComponent'
 import NewsComponent from '@/app/news/components/NewsComponent'
 import { staticNews } from '@/api/staticNews'
 

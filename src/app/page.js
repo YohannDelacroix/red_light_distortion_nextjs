@@ -25,42 +25,17 @@ import "@/styles/home.css"
 import "@/styles/newsletter.css";
 import "@/styles/photos.css";
 import "@/styles/tour.css";
-import HomeNewsletterSection from "./components/Home/HomeNewsletterSection/HomeNewsletterSection";
-import HomeVideoSection from "./components/Home/HomeVideoSection/HomeVideoSection";
-import HomeTourSection from "./components/Home/HomeTourSection/HomeTourSection";
-import HomeNewsSection from "./components/Home/HomeNewsSection/HomeNewsSection";
-import HomePhotosSection from "./components/Home/HomePhotosSection/HomePhotosSection";
+import HomeNewsletterSection from "./components/Home/HomeNewsletterSection";
+import HomeVideoSection from "./components/Home/HomeVideoSection";
+import HomeTourSection from "./components/Home/HomeTourSection";
+import HomeNewsSection from "./components/Home/HomeNewsSection";
+import HomePhotosSection from "./components/Home/HomePhotosSection";
+import HomePage from "./components/Home/HomePage";
 
 export default function Home() {
     const videoId = "p0Y52_ej810"; //Youtube Video ID in front of the home page
     
     return (
-        <main className="home">
-            {/* Video Section */}
-            <HomeVideoSection videoId={videoId} />
-
-            {/* Newsletter Section */}
-            <HomeNewsletterSection />
-
-            {/* Tour Dates Section */}
-            <HomeTourSection />
-
-            {/* News Section */}
-            <HomeNewsSection />
-
-            {/* Photos Section */}
-            <HomePhotosSection />
-
-            {/* Branding Logo Section */}
-            <section className="home-logo">
-                <Image
-                    src="/images/header/rldlogofondnoir.jpg"
-                    alt="Red Light Distortion Logo"
-                    width={389}
-                    height={153}
-                    layout="responsive"
-                    className="logo-img"></Image>
-            </section>
-        </main>
+        <HomePage videoId={videoId}/>
     );
 }

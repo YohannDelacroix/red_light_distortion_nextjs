@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import HomeTourSection from "./HomeTourSection";
+import HomeTourSection from "../HomeTourSection";
 import axios from 'axios';
 
 jest.mock('@/api/staticTourDates', () => ({
