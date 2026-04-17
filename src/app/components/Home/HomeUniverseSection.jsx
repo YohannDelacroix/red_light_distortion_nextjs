@@ -20,7 +20,7 @@ const HomeUniverseSection = ({ }) => {
                     layout="responsive"
                     className="home-universe-image"></Image>
                 <div className="home-universe-image-text">
-                    <p>{phraseAccroche}</p>
+                    <p className="home-phrase">{phraseAccroche}</p>
                     <Link className="home-link" href="/music">
                         <button className="home-large-button">Discover Red Light Distortion universe</button>
                     </Link>

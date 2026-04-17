@@ -20,7 +20,7 @@ const HomeHeroSection = ({ }) => {
                     layout="responsive"
                     className="home-universe-image"></Image>
                 <div className="home-universe-image-text">
-                    <p>{phrasePresentation}</p>
+                    <p className="home-phrase">{phrasePresentation}</p>
                     <div className="home-hero-buttons">
                         <Link className="home-link" href="/music">
                             <button className="home-button">Listen</button>
