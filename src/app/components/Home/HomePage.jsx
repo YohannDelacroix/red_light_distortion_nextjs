@@ -11,7 +11,6 @@ import HomeMusicSection from './HomeMusicSection'
 import HomeUniverseSection from './HomeUniverseSection'
 import BreakComponent from '../Break/BreakComponent'
 import TitleComponent from '../TitleComponent/TitleComponent'
-import HomeMediaSection from './HomeMediaSection'
 import HomeHeroSection from './HomeHeroSection'
 import Link from 'next/link'
 

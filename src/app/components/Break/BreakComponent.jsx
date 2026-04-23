@@ -60,7 +60,8 @@ const BreakComponent = () => {
             const viewportHeight = window.innerHeight;
 
             const start = viewportHeight;
-            const end = -rect.height * 0.65; // plus rapide qu'avant
+            const headerOffset = 150;
+            const end = headerOffset - rect.height * 0.65;
 
             const rawProgress = (start - rect.top) / (start - end);
             const nextProgress = clamp(rawProgress, 0, 1);
