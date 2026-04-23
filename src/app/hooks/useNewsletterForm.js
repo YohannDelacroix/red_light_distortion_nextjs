@@ -9,7 +9,7 @@ import axios from 'axios';
  * 
  * @returns {object} - Methods and state variables for managing the newsletter form.
  */
-function useNewsletterForm() {
+function useNewsletterForm() { 
     // State variables
     const [displayForm, setDisplayForm] = useState(false); // Controls form visibility
     const [results, setResults] = useState({ name: '', city: '', email: '' }); // Form input values

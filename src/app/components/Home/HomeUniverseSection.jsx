@@ -7,7 +7,7 @@ import Link from 'next/link'
 import React from 'react'
 
 const HomeUniverseSection = ({ }) => {
-    const phraseAccroche = "A drop of energy into a flying harmonized core"
+    const phraseAccroche = "A drop of energy into an hypnotic harmonized core"
 
     return (
         <section className="home-universe">
