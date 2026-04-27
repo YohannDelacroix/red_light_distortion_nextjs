@@ -9,7 +9,7 @@ import axios from 'axios';
  * 
  * @returns {object} - Methods and state variables for managing the newsletter form.
  */
-function useNewsletterForm() {
+function useNewsletterForm() { 
     // State variables
     const [displayForm, setDisplayForm] = useState(false); // Controls form visibility
     const [results, setResults] = useState({ name: '', city: '', email: '' }); // Form input values
@@ -132,7 +132,7 @@ function useNewsletterForm() {
                 setErrorServer(null); // Clear previous server errors
 
                 // Send form data to the server
-                const response = await axios.post('http://localhost:5050/newsletter/add', results);
+                const response = await axios.post('/api/newsletter', results);
 
                 //Reset form inputs, hide form, and display a confirmation message
                 setResults(initialFormState);
