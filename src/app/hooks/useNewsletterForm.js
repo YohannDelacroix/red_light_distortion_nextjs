@@ -132,7 +132,7 @@ function useNewsletterForm() {
                 setErrorServer(null); // Clear previous server errors
 
                 // Send form data to the server
-                const response = await axios.post('http://localhost:5050/newsletter/add', results);
+                const response = await axios.post('/api/newsletter', results);
 
                 //Reset form inputs, hide form, and display a confirmation message
                 setResults(initialFormState);
